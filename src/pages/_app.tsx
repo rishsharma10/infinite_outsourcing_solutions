@@ -18,7 +18,6 @@ import {
 } from '@ant-design/cssinjs';
 import type Entity from '@ant-design/cssinjs/es/Cache';
 import { renderToString } from 'react-dom/server';
-
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -30,7 +29,6 @@ type AppPropsWithLayout = AppProps & {
   signInPrivacy: string;
   userType: string;
 };
-
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -52,7 +50,7 @@ const MyApp = ({ Component, pageProps, ...props }: AppPropsWithLayout) => {
         </Head>
       ) : (
         <Head>
-          <title>Copper & Crumb</title>
+          <title>Infinite Outsourcing System</title>
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"

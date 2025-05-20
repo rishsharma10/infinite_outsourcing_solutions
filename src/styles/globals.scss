@@ -1,26 +1,14 @@
-// @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// @import "override";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "theme";
 @import "typography";
 @import "nprogress/nprogress.css";
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-
-// @font-face {
-//   font-family: 'karlieserifCondensed';
-//   src: url('../assets/karlieserif-condensed-maisfontes.0df4/karlieserif-condensed.otf');
-// }
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 html,
 body,
 #__next,
 .ant-layout {
   height: 100%;
-  background-color: #f4f4f4;
-}
-
-* {
-  font-family: "Lato", serif !important;
+  font-family: "Nunito", sans-serif;
 }
 
 .ant-layout-sider {
@@ -57,12 +45,10 @@ h2,
 h3,
 h4 {
   color: $black;
-  font-family: 'karlieserifCondensed' !important;
   letter-spacing: 1px;
 }
 
 .logo-text {
-  font-family: 'karlieserifCondensed' !important;
   text-transform: uppercase;
   margin: 0;
   color: $black;
@@ -372,7 +358,6 @@ a {
   a {
     text-transform: uppercase;
     font-size: 16px;
-    font-family: "Marcellus", serif;
     letter-spacing: 1px;
 
     &:hover {
@@ -387,7 +372,6 @@ a {
   .nav-link {
     color: $black ;
     font-size: 16px;
-    font-family: "Marcellus", serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding-inline: 0 !important;
@@ -596,9 +580,6 @@ button {
     text-align: center;
   }
 
-  .name {
-    font-family: "Marcellus", serif;
-  }
 }
 
 .ant-carousel .slick-dots li {
@@ -883,29 +864,7 @@ width: 100% !important;
 
 
 
-
-.user-profile {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 24px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
-  .profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-
-  .profile-label {
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #555;
-  }
-
-  .profile-value {
-    margin-bottom: 16px;
-  }
+// --------------------------------- New Css -------------------------------
+.hero-section{
+  
 }

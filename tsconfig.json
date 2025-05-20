@@ -18,6 +18,6 @@
       "@/*": ["src/*"]                       // ✅ Alias for importing from src
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types", "postcss.config.mjs"],
   "exclude": ["node_modules"]
 }
