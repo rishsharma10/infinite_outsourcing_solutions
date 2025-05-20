@@ -30,6 +30,7 @@ type AppPropsWithLayout = AppProps & {
   signInPrivacy: string;
   userType: string;
 };
+
 NProgress.configure({ showSpinner: false });
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

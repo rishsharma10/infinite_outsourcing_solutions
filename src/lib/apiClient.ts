@@ -15,4 +15,3 @@ export async function apiClient<T>(
   
     return res.json();
   }
-  
