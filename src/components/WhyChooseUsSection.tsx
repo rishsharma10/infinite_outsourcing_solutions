@@ -51,7 +51,8 @@ export default function WhyChooseUs() {
   return (
     <section
       ref={sectionRef}
-      className="min-vh-100 py-5 px-3 bg-gradient bg-light position-relative"
+      className="min-vh-100 py-5 px-3 position-relative"
+      // className="min-vh-100 py-5 px-3 bg-gradient bg-light position-relative"
     >
       <div className="container">
         <motion.div
@@ -60,13 +61,13 @@ export default function WhyChooseUs() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="display-5 fw-bold text-center mb-5 text-primary">
+          <h2 className="display-5 text-white fw-bold text-center mb-5 text-primary">
             Why Choose Us?
           </h2>
         </motion.div>
         <div className="position-relative">
           <div
-            className="position-absolute top-0 start-50 translate-middle-x bg-primary"
+            className="position-absolute top-0 start-50 translate-middle-x bg-white"
             style={{ width: "4px", height: "100%" }}
           ></div>
           <motion.div

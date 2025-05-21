@@ -66,7 +66,7 @@ const ContactSection = () => {
       ref={sectionRef}
       className="py-5"
       style={{
-        backgroundImage: `linear-gradient(rgba(12, 11, 11, 0.86), rgba(226, 122, 53, 0.58)), url('https://img.freepik.com/free-photo/closeup-hand-writing-note-while-phone_53876-14460.jpg?ga=GA1.1.1619646831.1747818223&semt=ais_hybrid&w=740')`,
+        // backgroundImage: `linear-gradient(rgba(12, 11, 11, 0.86), rgba(226, 122, 53, 0.58)), url('https://img.freepik.com/free-photo/closeup-hand-writing-note-while-phone_53876-14460.jpg?ga=GA1.1.1619646831.1747818223&semt=ais_hybrid&w=740')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -78,8 +78,8 @@ const ContactSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-primary mb-4">Contact Us</h2>
-        <hr />
+        <h2 className="text-white mb-4">Contact Us</h2>
+        <hr className="text-white"/>
       </motion.div>
       <div className="row mt-4">
         <div className="col-lg-4">

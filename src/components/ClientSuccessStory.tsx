@@ -46,7 +46,7 @@ const ClientSuccessStory = () => {
     ref={storyRef}
     className="py-5 px-3 position-relative text-white"
     style={{
-      background: 'linear-gradient(to right,rgba(248, 64, 7, 0.89),rgb(226, 99, 40),rgba(248, 120, 69, 0.69))',
+    //   background: 'linear-gradient(to right,rgba(248, 64, 7, 0.89),rgb(226, 99, 40),rgba(248, 120, 69, 0.69))',
     }}
   >
     <motion.div initial={{ opacity: 0, scale: 0.95 }}

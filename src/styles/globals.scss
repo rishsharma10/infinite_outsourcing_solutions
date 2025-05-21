@@ -11,6 +11,31 @@ body,
   font-family: "Nunito", sans-serif;
 }
 
+body {
+  // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/gpt6_1747838874023.jpg'); /* Update with your path */
+  background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/rea1_1747839125883.jpg'); /* Update with your path */
+  // background: #0d0d0d;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  z-index: -1;
+}
+// .global-bg {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   width: 100vw;
+//   background-image: url('/images/background.jpg');
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   z-index: -1;
+// }
+h2{
+  color: #fff !important;
+}
 .ant-layout-sider {
   height: 100%;
   overflow: auto;
@@ -795,6 +820,9 @@ width: 100% !important;
   .overview-image{
     height: 300px;
   }
+  .overview-content{
+    color: #fff !important;
+  }
 }
 
 
@@ -919,7 +947,7 @@ h2{
 
 
 .industries-section {
-  background-color: #0d0d0d;
+  // background-color: #0d0d0d;
   color: #fff;
   position: relative;
   padding: 80px 60px;
@@ -1012,7 +1040,53 @@ h2{
   color: $primary;
 }
 
-
+.our-service-card{
+  .flip-card {
+    background: transparent;
+    perspective: 1000px;
+    height: 300px;
+    border-radius: 20px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .flip-card-front img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  
+  .flip-card-back {
+    background: rgba(233, 227, 227, 0.411);
+    color: white;
+    transform: rotateY(180deg);
+    z-index: 2;
+  }
+  
+}
 
 
 

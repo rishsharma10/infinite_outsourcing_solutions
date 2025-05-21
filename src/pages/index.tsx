@@ -21,7 +21,7 @@ const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -140,8 +140,8 @@ const HomePage = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}>
                 <div className="col-12 mb-4">
-                  <h2 className="fw-semibold text-primary">Company Overview</h2>
-                  <hr />
+                  <h2 className="fw-semibold text-white">Company Overview</h2>
+                  <hr  className="text-white"/>
                 </div>
               </motion.div>
               <div className="col-md-4">
@@ -185,7 +185,7 @@ const HomePage = () => {
       <OurServicesSection/>
       <WhyChooseUsSection/>
       <IndustriesWeServe/>
-      <AboutUsSection2/>
+      {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
       <ClientSuccessStory/>
       <ContactSection/>
