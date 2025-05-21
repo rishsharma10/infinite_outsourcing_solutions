@@ -64,12 +64,12 @@ const ContactSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-5"
+      className="py-5 contactus-section"
       style={{
         // backgroundImage: `linear-gradient(rgba(12, 11, 11, 0.86), rgba(226, 122, 53, 0.58)), url('https://img.freepik.com/free-photo/closeup-hand-writing-note-while-phone_53876-14460.jpg?ga=GA1.1.1619646831.1747818223&semt=ais_hybrid&w=740')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
       }}
     >
         <div className="container">
@@ -88,16 +88,16 @@ const ContactSection = () => {
           {contactInfo.map((item, idx) => (
             <motion.div
               key={idx}
-              className="card mb-3 border-0 p-3 shadow"
+              className="card mb-3 border-0 p-3 shadow contact-card-transparent"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
             >
               <div className="d-flex align-items-center mb-2">
                 {item.icon}
-                <h5 className="ms-2 mb-0">{item.title}</h5>
+                <h5 className="ms-2 mb-0 text-white">{item.title}</h5>
               </div>
-              <a href={item.link} className="text-decoration-none text-muted">
+              <a href={item.link} className="text-decoration-none text-white">
                 {item.details}
               </a>
             </motion.div>
@@ -118,9 +118,9 @@ const ContactSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="card p-4 shadow-sm"
+            className="card p-4 shadow-sm contact-card-transparent"
           >
-            <div className="card p-4 border-0 shadow">
+            <div className=" p-4 border-0 contact-card-transparent">
               <h4 className="mb-4">Send us a message</h4>
               <AnimatePresence>
                 {isSuccess ? (
@@ -137,7 +137,7 @@ const ContactSection = () => {
                     <div className="row mb-3">
                       <div className="col">
                         <input
-                          className={`form-control ${
+                          className={`form-control form-control-transparent${
                             errors.name ? "is-invalid" : ""
                           }`}
                           placeholder="Name"
@@ -151,7 +151,7 @@ const ContactSection = () => {
                       </div>
                       <div className="col">
                         <input
-                          className={`form-control ${
+                          className={`form-control form-control-transparent${
                             errors.email ? "is-invalid" : ""
                           }`}
                           placeholder="Email"
@@ -166,7 +166,7 @@ const ContactSection = () => {
                     </div>
                     <div className="mb-3">
                       <input
-                        className={`form-control ${
+                        className={`form-control form-control-transparent${
                           errors.subject ? "is-invalid" : ""
                         }`}
                         placeholder="Subject"
@@ -180,7 +180,7 @@ const ContactSection = () => {
                     </div>
                     <div className="mb-3">
                       <textarea
-                        className={`form-control ${
+                        className={`form-control form-control-transparent${
                           errors.message ? "is-invalid" : ""
                         }`}
                         placeholder="Message"

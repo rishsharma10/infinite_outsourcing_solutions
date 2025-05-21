@@ -42,5 +42,5 @@ export default function RedoAnimText({ delay }: IRedoAnimTextProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <motion.span className="inline fw-semibold" style={{fontSize:60}}>{displayText}</motion.span>;
+  return <motion.span className="inline fw-semibold" style={{fontSize:40}}>{displayText}</motion.span>;
 }

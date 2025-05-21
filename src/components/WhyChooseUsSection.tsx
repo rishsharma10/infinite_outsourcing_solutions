@@ -83,18 +83,18 @@ export default function WhyChooseUs() {
                 <div
                   key={i}
                   ref={(el: any) => (cardsRef.current[i] = el)}
-                  className={`row align-items-center mb-3 ${
-                    isEven ? "" : "flex-row-reverse"
+                  className={`row align-items-center mb-3  ${
+                    isEven ? "" : "flex-row-reverse "
                   }`}
                 >
                   <div className="col-md-6">
-                    <div className="bg-white rounded-4 shadow p-4 d-flex align-items-center gap-4 h-100">
-                      <div className="bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                    <div className="whychooseusecardtransparent rounded-4 shadow p-4 d-flex align-items-center gap-4 h-100">
+                      <div className="text-white bg-opacity-10 text-primary p-3 rounded-circle">
                         <Icon size={32} />
                       </div>
                       <div>
                         <h4 className="fw-semibold mb-2">{feature.title}</h4>
-                        <p className="mb-0 text-muted">{feature.description}</p>
+                        <p className="mb-0 text-white">{feature.description}</p>
                       </div>
                     </div>
                   </div>

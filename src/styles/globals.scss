@@ -13,7 +13,8 @@ body,
 
 body {
   // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/gpt6_1747838874023.jpg'); /* Update with your path */
-  background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/rea1_1747839125883.jpg'); /* Update with your path */
+  // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/rea1_1747839125883.jpg'); /* Update with your path */
+  background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/244442cc_3d30_4cd8_addb_5862933452c9_1747842946559.jpg'); /* Update with your path */
   // background: #0d0d0d;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1032,12 +1033,12 @@ h2{
 
 /* When user scrolls */
 .main-header.scrolled {
-  background-color: white;
+  background-color: rgba(82, 79, 79, 0.877);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .main-header.scrolled .nav-link {
-  color: $primary;
+  color: white;
 }
 
 .our-service-card{
@@ -1096,6 +1097,49 @@ h2{
 
 
 
+
+
+
+.whychooseusecardtransparent{
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  color: #fff;
+}
+
+.contactus-section{
+  .contact-card-transparent {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    color: #fff;
+  }
+  
+  .form-control-transparent {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .form-control-transparent::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .form-control-transparent:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+    color: #fff;
+  }
+  
+  .is-invalid {
+    border-color: #dc3545 !important;
+  }
+  
+  .invalid-feedback {
+    color: #f8d7da;
+  }
+}
 
 
 
