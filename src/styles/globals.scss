@@ -15,6 +15,11 @@ body,
   height: 100%;
   overflow: auto;
 }
+.Toastify{
+  padding: 0;
+}
+
+
 
 p {
   margin: 0;
@@ -370,9 +375,8 @@ a {
   background-color: $white;
 
   .nav-link {
-    color: $black ;
+    color: $white ;
     font-size: 16px;
-    text-transform: uppercase;
     letter-spacing: 1px;
     padding-inline: 0 !important;
     margin-right: 8px;
@@ -387,12 +391,12 @@ a {
       left: 0;
       height: 1px;
       width: 0;
-      background-color: $black;
+      background-color: $primary;
     }
   }
 
   .nav-link.active {
-    color: $black;
+    color: $primary;
 
     &::before {
       width: 60%;
@@ -753,102 +757,6 @@ width: 100% !important;
   height: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .login-container {
   max-width: 400px;
   margin: 80px auto;
@@ -866,5 +774,263 @@ width: 100% !important;
 
 // --------------------------------- New Css -------------------------------
 .hero-section{
+    &::before{
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.435);
+      z-index: 1;
+      top: 0;
+    }
+    .navbar-brand{
+      .nav-link{
+        color: #ffffff !important;
+      }
+    }
+}
+
+
+.overview-card{
+  .overview-image{
+    height: 300px;
+  }
+}
+
+
+
+
+// ---- about us----
+.our-story-content{
+  p{
+    font-size: 20px;
+  }
+}
+.core-value-card{
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  h4{
+    font-weight: 600;
+    font-size: 20px;
+  }
+  p{
+    font-size: 16px;
+    color: gray;
+  }
+  &:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  .core-value-img{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.tab-heading{
+  font-size: 24px;
+  cursor: pointer;
+}
+.active-tab{
+  transition: 0.1s ease-in-out;
+  border-bottom: 3px solid #ff0100 !important;
+  font-weight: 700 !important;
+  color: #ff0100;
+}
+
+.tab-content{
+  font-size: 20px;
+}
+
+
+h2{
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 2px;
+    background: red;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+.aboutus{
+  .hover-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .hover-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  
+  .hover-card:hover .hover-card-image img {
+    transform: scale(1.05);
+  }
+  
+  .hover-card-content {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.473); // transparent overlay
+    color: #fff;
+    opacity: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    transition: opacity 0.4s ease;
+  }
+  
+  .hover-card:hover .hover-card-content {
+    opacity: 1;
+  }
+  
   
 }
+
+
+
+
+.industries-section {
+  background-color: #0d0d0d;
+  color: #fff;
+  position: relative;
+  padding: 80px 60px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.vertical-label {
+  margin-left: 80px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  position: absolute;
+  // left: -40px; // Move into view
+  top: 15%;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #ccc;
+  font-weight: 600;
+  transform-origin: left center;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.industry-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent);
+    width: 100%;
+    padding: 20px;
+    color: white;
+
+    h5 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    a {
+      color: #ccc;
+      font-size: 0.9rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

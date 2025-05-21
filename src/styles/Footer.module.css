@@ -1,0 +1,213 @@
+.footer {
+    position: relative;
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+  }
+  
+  .footerTop {
+    padding: 5rem 0 3rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+  
+  .footerLogo {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .footerLogo:hover {
+    transform: translateY(-2px);
+  }
+  
+  .footerDescription {
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: hsla(var(--muted), 0.3);
+    color: hsl(var(--muted-foreground));
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .socialLink:hover {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    transform: translateY(-3px);
+  }
+  
+  .footerColumn {
+    margin-bottom: 2rem;
+  }
+  
+  .footerHeading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .footerHeading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: hsl(var(--primary));
+  }
+  
+  .footerLinks {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footerLink {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    transition: all 0.3s ease;
+  }
+  
+  .footerLink:hover {
+    color: hsl(var(--primary));
+    transform: translateX(5px);
+  }
+  
+  .contactInfo {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .contactItem svg {
+    margin-right: 0.75rem;
+    color: hsl(var(--primary));
+  }
+  
+  .contactItem a {
+    transition: color 0.3s ease;
+  }
+  
+  .contactItem a:hover {
+    color: hsl(var(--primary));
+  }
+  
+  .newsletterForm {
+    margin-top: 1.5rem;
+  }
+  
+  .newsletterHeading {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  
+  .subscribeForm {
+    display: flex;
+    margin-top: 0.75rem;
+  }
+  
+  .subscribeInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.5rem 0 0 0.5rem;
+    background-color: hsla(var(--muted), 0.3);
+    color: hsl(var(--foreground));
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .subscribeInput:focus {
+    border-color: hsl(var(--primary));
+    background-color: hsla(var(--muted), 0.1);
+  }
+  
+  .subscribeButton {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .subscribeButton:hover {
+    background: hsla(var(--primary), 0.8);
+  }
+  
+  .footerBottom {
+    padding: 1.5rem 0;
+  }
+  
+  .copyright {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.9rem;
+  }
+  
+  .footerBottomLinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .bottomLink {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .bottomLink:hover {
+    color: hsl(var(--primary));
+  }
+  
+  .scrollToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+  }
+  
+  .scrollToTop:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+  
+  @media (min-width: 768px) {
+    .footerBottomLinks {
+      margin-top: 0;
+    }
+  }
