@@ -16,6 +16,7 @@ import { createCache, StyleProvider } from "@ant-design/cssinjs";
 import type Entity from "@ant-design/cssinjs/es/Cache";
 import { renderToString } from "react-dom/server";
 import { ThemeProvider } from "next-themes";
+import { HOMEPAGE } from "@/utils/content";
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -38,27 +39,24 @@ const MyApp = ({ Component, pageProps, ...props }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page);
   const cache = React.useMemo<Entity>(() => createCache(), []);
 
-
-
-
   useEffect(() => {
     // Initialize any global animations or scripts
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
+      rootMargin: "0px",
       threshold: 0.1,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
+          entry.target.classList.add("animated");
           observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const animatedElements = document.querySelectorAll(".animate-on-scroll");
     animatedElements.forEach((el) => observer.observe(el));
 
     return () => {
@@ -68,50 +66,43 @@ const MyApp = ({ Component, pageProps, ...props }: AppPropsWithLayout) => {
     };
   }, []);
 
-
-
-
-
   return (
     <Fragment>
       <ThemeProvider attribute="class">
-      <StyleProvider cache={cache}>
-        <Provider store={store}>
-          {isAdminRoute ? (
-            <Head>
-              <meta name="robots" content="noindex, nofollow" />
-            </Head>
-          ) : (
-            <Head>
-              <title>Infinite Outsourcing System</title>
-              <meta
-                name="viewport"
-                content="initial-scale=1.0, width=device-width"
-              />
-              <meta
-                name="description"
-                content="Wide Selection of Music Artists."
-              />
-              <link
-                rel="stylesheet"
-                href="https://unpkg.com/treeflex/dist/css/treeflex.css"
-              ></link>
-              {/* <link rel="icon" href="public%favicon.ico" /> */}
-              <link
-                rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-              />
-              <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <StyleProvider cache={cache}>
+          <Provider store={store}>
+            {isAdminRoute ? (
+              <Head>
+                <meta name="robots" content="noindex, nofollow" />
+              </Head>
+            ) : (
+              <Head>
+                <title>Infinite Outsourcing System</title>
+                <meta
+                  name="viewport"
+                  content="initial-scale=1.0, width=device-width"
+                />
+                <meta name="description" content={HOMEPAGE.heading} />
+                <link
+                  rel="stylesheet"
+                  href="https://unpkg.com/treeflex/dist/css/treeflex.css"
+                ></link>
+                {/* <link rel="icon" href="public%favicon.ico" /> */}
+                <link
+                  rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+                />
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
-              {/* <style jsx global>{`
+                {/* <style jsx global>{`
       * {
         font-family: ${montserrat.style.fontFamily} !important; 
       }
     `}</style> */}
-            </Head>
-          )}
-          <Script id="my-script" strategy="lazyOnload">
-            {`
+              </Head>
+            )}
+            <Script id="my-script" strategy="lazyOnload">
+              {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
@@ -119,32 +110,30 @@ const MyApp = ({ Component, pageProps, ...props }: AppPropsWithLayout) => {
                     page_path: window.location.pathname,
                     });
                 `}
-          </Script>
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-FVXPLF125R"
-          ></Script>
-          <Script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBioMK31w2-759jRzfev6Tpkdj9pe2eKrw"
-            async
-            defer
-          ></Script>
-          {getLayout(
-            <>
-              <Component {...pageProps} />
-              {/* <ScrollToTop /> */}
-              <ToastContainer />
-            </>
-          )}
-        </Provider>
-      </StyleProvider>
+            </Script>
+            <Script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-FVXPLF125R"
+            ></Script>
+            <Script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBioMK31w2-759jRzfev6Tpkdj9pe2eKrw"
+              async
+              defer
+            ></Script>
+            {getLayout(
+              <>
+                <Component {...pageProps} />
+                {/* <ScrollToTop /> */}
+                <ToastContainer />
+              </>
+            )}
+          </Provider>
+        </StyleProvider>
       </ThemeProvider>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     </Fragment>
   );
 };
-
-
 
 export default MyApp;

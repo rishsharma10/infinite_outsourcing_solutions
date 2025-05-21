@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "@/assets/logo-white.png";
+import logoblack from "@/assets/logoblack.png";
 import { HOMEPAGE } from "@/utils/content";
 import { motion } from "framer-motion";
 import AnimText from "@/components/AnimText";
@@ -17,6 +18,13 @@ import IndustriesWeServe from "@/components/IndustriesWeServe";
 import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
 
 const HomePage = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -52,95 +60,40 @@ const HomePage = () => {
   return (
     <>
       <section className="hero-section py-0 position-relative">
-        <header className="position-fixed z-2 w-100">
-          <nav className="navbar navbar-expand-lg bg-transparent">
-            <div className="container">
-              <a className="navbar-brand" href="#">
-                <img src={logo.src} height={40} />
-              </a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4 mx-auto">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link bg-red-300 active"
-                      aria-current="page"
-                      href="#"
-                    >
-                      Job Seekers
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Outsourcing
-                    </a>
-                  </li>
-                  <li className="nav-item dropdown">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Industries we serve
-                    </a>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Action
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Another action
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="#">
-                          Something else here
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Jobs
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      About Us
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-
-                {/* <div className="d-flex align-items-center gap-2 text-primary">
-                <button className="btn p-0 bg-transparent text-white">Login</button>/
-                <button className="btn p-0 bg-transparent text-white">Register</button>
-               </div> */}
-              </div>
-            </div>
-          </nav>
-        </header>
+      <header className={`main-header position-fixed w-100 ${scrolled ? 'scrolled z-2' : 'z-2'}`}>
+      <nav className="navbar navbar-expand-lg bg-transparent">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <img src={!scrolled ? logo.src : logoblack.src} height={40} alt="Logo" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4 mx-auto">
+              <li className="nav-item"><a className="nav-link" href="#">Job Seekers</a></li>
+              <li className="nav-item"><a className="nav-link" href="#">Outsourcing</a></li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  Industries we serve
+                </a>
+              </li>
+              <li className="nav-item"><a className="nav-link" href="/">Jobs</a></li>
+              <li className="nav-item"><a className="nav-link" href="/">About Us</a></li>
+              <li className="nav-item"><a className="nav-link" href="/">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
         {/* hero-video */}
         <video
