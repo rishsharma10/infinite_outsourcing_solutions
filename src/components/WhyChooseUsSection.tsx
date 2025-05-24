@@ -1,50 +1,50 @@
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+// import gsap from "gsap";
+// import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HOMEPAGE } from "@/utils/content";
 import { fadeUp, slideInLeft } from "@/lib/animation";
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function WhyChooseUs() {
   const sectionRef = useRef(null);
   const cardsRef = useRef([] as any);
 
-  useEffect(() => {
-    gsap.fromTo(
-      sectionRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-        },
-      }
-    );
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     sectionRef.current,
+  //     { opacity: 0, y: 50 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 1,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top 80%",
+  //       },
+  //     }
+  //   );
 
-    cardsRef.current.forEach((card: any, index: any) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-          },
-        }
-      );
-    });
-  }, []);
+  //   cardsRef.current.forEach((card: any, index: any) => {
+  //     gsap.fromTo(
+  //       card,
+  //       { opacity: 0, x: index % 2 === 0 ? -100 : 100 },
+  //       {
+  //         opacity: 1,
+  //         x: 0,
+  //         duration: 1,
+  //         delay: index * 0.2,
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //         },
+  //       }
+  //     );
+  //   });
+  // }, []);
 
   const features = HOMEPAGE.why_choose_us;
 

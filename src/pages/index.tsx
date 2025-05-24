@@ -22,8 +22,8 @@ const HomePage = () => {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const containerVariants = {
     hidden: {
@@ -59,41 +59,89 @@ const HomePage = () => {
 
   return (
     <>
-      <section className="hero-section py-0 position-relative">
-      <header className={`main-header position-fixed w-100 ${scrolled ? 'scrolled z-2' : 'z-2'}`}>
-      <nav className="navbar navbar-expand-lg bg-transparent">
-        <div className="container">
-          <a className="navbar-brand" href="#">
-            <img src={!scrolled ? logo.src : logoblack.src} height={40} alt="Logo" />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4 mx-auto">
-              <li className="nav-item"><a className="nav-link" href="#">Job Seekers</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Outsourcing</a></li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                  Industries we serve
-                </a>
-              </li>
-              <li className="nav-item"><a className="nav-link" href="/">Jobs</a></li>
-              <li className="nav-item"><a className="nav-link" href="/">About Us</a></li>
-              <li className="nav-item"><a className="nav-link" href="/">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+      <section className="hero-section pt-0 pb-4 position-relative">
+        <header
+          className={`main-header position-fixed w-100 ${
+            scrolled ? "scrolled z-3" : "z-3"
+          }`}
+        >
+          <nav className="navbar navbar-expand-lg bg-transparent py-3">
+            <div className="container">
+              <a className="navbar-brand" href="#">
+                <img
+                  src={!scrolled ? logo.src : logo.src}
+                  height={40}
+                  alt="Logo"
+                />
+              </a>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3 mx-auto align-items-center">
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Job Seekers
+                    </a>
+                  </li>
+                  <li className="text-white fs-4 fw-lighter">|</li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      Outsourcing
+                    </a>
+                  </li>
+                  <li className="text-white fs-4 fw-lighter">|</li>
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      Industries we serve
+                    </a>
+                  </li>
+                  <li className="text-white fs-4 fw-lighter">|</li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/">
+                      Jobs
+                    </a>
+                  </li>
+                  <li className="text-white fs-4 fw-lighter">|</li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/">
+                      About Us
+                    </a>
+                  </li>
+                  <li className="text-white fs-4 fw-lighter">|</li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+
+                <div className="d-flex">
+                  <button className="btn btn-primary rounded-pill px-4">
+                    <span>Login</span>
+                  </button>
+                  {/* <button className="btn btn-primary rounded-pill px-4">Signup</button> */}
+                </div>
+              </div>
+            </div>
+          </nav>
+        </header>
 
         {/* hero-video */}
         <video
@@ -105,10 +153,33 @@ const HomePage = () => {
 
         {/* hero-content */}
         <div className="container h-100">
-          <div className="row align-items-center justify-content-center h-100">
-            <div className="col-12 col-lg-11">
-              <div className="position-relative z-2 text-center">
-                <motion.div className="d-flex w-100 align-items-center justify-content-center">
+          <div className="row align-items-end justify-content-center h-100">
+            <div className="col-12">
+              <div className="position-relative z-2">
+                <div className="row pb-5 gx-5">
+                  <div className="col-md-7">
+                    <h1 className="text-white heading">{HOMEPAGE.heading}
+                      <span className="ps-3 text-theme">Infinite Outsourcing Solutions</span>
+                    </h1>
+                    <button className="btn btn-primary px-4 py-2">
+                      <span>Lorem, ipsum.</span>
+                    </button>
+                  </div>
+                  <div className="col-md-5 border-start align-self-end py-3">
+                    <p className="text-white fs-16">
+                      {HOMEPAGE.sub_heading}
+                    </p>
+                    <div className="d-flex align-items-center gap-2 mt-4">
+                      <button className="btn btn-primary px-4 py-2">
+                        <span>Lorem, ipsum.</span>
+                      </button>
+                      <button className="btn btn-primary px-4 py-2">
+                        <span>Lorem, ipsum.</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {/* <motion.div className="d-flex w-100 align-items-center justify-content-center">
                   <motion.div
                     variants={containerVariants}
                     animate="visible"
@@ -121,27 +192,25 @@ const HomePage = () => {
                       <AnimText delay={1} />
                     </motion.span>
                   </motion.div>
-                </motion.div>
-
-                <p className="text-white w-75 mx-auto fs-4 mt-5">
-                  {HOMEPAGE.sub_heading}
-                </p>
+                </motion.div> */}
               </div>
             </div>
           </div>
         </div>
       </section>
-      <SectionReveal>
+      {/* <SectionReveal>
         <section className="company-overview">
           <div className="container">
             <div className="row gy-3">
-              <motion.div variants={fadeUp}
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}>
+              <motion.div
+                variants={fadeUp}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              >
                 <div className="col-12 mb-4">
                   <h2 className="fw-semibold text-white">Company Overview</h2>
-                  <hr  className="text-white"/>
+                  <hr className="text-white" />
                 </div>
               </motion.div>
               <div className="col-md-4">
@@ -181,15 +250,15 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-      </SectionReveal>
-      <OurServicesSection/>
-      <WhyChooseUsSection/>
-      <IndustriesWeServe/>
+      </SectionReveal> */}
+      <OurServicesSection />
+      {/* <WhyChooseUsSection /> */}
+      {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
-      <ClientSuccessStory/>
-      <ContactSection/>
-      <Footer/>
+      <ClientSuccessStory />
+      {/* <ContactSection /> */}
+      <Footer />
     </>
   );
 };

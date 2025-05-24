@@ -1,8 +1,9 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 @import "theme";
 @import "typography";
+@import "override";
 @import "nprogress/nprogress.css";
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 html,
 body,
 #__next,
@@ -14,7 +15,7 @@ body,
 body {
   // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/gpt6_1747838874023.jpg'); /* Update with your path */
   // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/rea1_1747839125883.jpg'); /* Update with your path */
-  background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/244442cc_3d30_4cd8_addb_5862933452c9_1747842946559.jpg'); /* Update with your path */
+  background-image: url("https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/244442cc_3d30_4cd8_addb_5862933452c9_1747842946559.jpg"); /* Update with your path */
   // background: #0d0d0d;
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,18 +35,16 @@ body {
 //   background-repeat: no-repeat;
 //   z-index: -1;
 // }
-h2{
+h2 {
   color: #fff !important;
 }
 .ant-layout-sider {
   height: 100%;
   overflow: auto;
 }
-.Toastify{
+.Toastify {
   padding: 0;
 }
-
-
 
 p {
   margin: 0;
@@ -91,13 +90,13 @@ h4 {
   text-transform: uppercase;
   font-size: 46px;
 }
-.title-separater-next{
+.title-separater-next {
   height: 27px;
   width: 192px;
   margin: auto;
   min-height: 27px;
 }
-.footer-logo{
+.footer-logo {
   height: 100px;
   width: 95px;
   min-height: 100px;
@@ -137,8 +136,7 @@ a {
   position: relative;
   height: 100vh;
 
-
-  .ant-carousel .slick-list .slick-slide>div>div,
+  .ant-carousel .slick-list .slick-slide > div > div,
   .ant-carousel,
   .slick-slider,
   .slick-list,
@@ -146,11 +144,11 @@ a {
     height: 100%;
   }
 
-  .ant-carousel .slick-list .slick-slide>div>div {
+  .ant-carousel .slick-list .slick-slide > div > div {
     height: 100% !important;
   }
 
-  .ant-carousel .slick-list .slick-slide>div {
+  .ant-carousel .slick-list .slick-slide > div {
     height: 100%;
   }
 
@@ -159,7 +157,7 @@ a {
 
     &::before {
       position: absolute;
-      content: '';
+      content: "";
       height: 100%;
       width: 100%;
       inset: 0;
@@ -187,7 +185,7 @@ a {
     }
   }
 
-  @media (max-width:575px) {
+  @media (max-width: 575px) {
     height: 74vh;
 
     .hero-content {
@@ -219,12 +217,12 @@ a {
     }
   }
 }
-.item-image{
+.item-image {
   height: 106px;
   width: 94px;
-      border-radius: 8px;
-      min-height: 106px;
-      margin: auto;
+  border-radius: 8px;
+  min-height: 106px;
+  margin: auto;
 }
 .fixed-banner-section {
   // background: linear-gradient(#000000ae, #000000ae), url('../assets/images/espresso-pouring-from-coffee-machine-cafe.jpg') center/cover no-repeat;
@@ -253,7 +251,6 @@ a {
     font-size: 16px;
   }
 }
-
 
 .cart-card {
   .cart-image {
@@ -401,45 +398,24 @@ a {
   background-color: $white;
 
   .nav-link {
-    color: $white ;
-    font-size: 16px;
+    color: $white;
+    font-size: 14px;
     letter-spacing: 1px;
     padding-inline: 0 !important;
     margin-right: 8px;
     position: relative;
     white-space: nowrap;
-
-    &::before {
-      content: '';
-      transition: 0.3s;
-      position: absolute;
-      bottom: 6px;
-      left: 0;
-      height: 1px;
-      width: 0;
-      background-color: $primary;
+    font-weight: 300;
+    &:hover{
+      color: $white;
     }
   }
 
-  .nav-link.active {
-    color: $primary;
-
-    &::before {
-      width: 60%;
-    }
-  }
-
-  .nav-link:hover {
-    &::before {
-      width: 60%;
-    }
-  }
 }
 
 .bg-dark {
   background-color: $black !important;
 }
-
 
 // --------------------------------- Cart Section ------------------------------
 .cart-banner {
@@ -455,7 +431,7 @@ a {
   &::before {
     height: 100%;
     width: 100%;
-    content: '';
+    content: "";
     background-color: rgba(0, 0, 0, 0.618);
     position: absolute;
     inset: 0;
@@ -494,14 +470,12 @@ a {
       // width: 25%;
       min-width: 200px;
     }
-
   }
-  @media (max-width:575px) {
+  @media (max-width: 575px) {
     .cart-list {
       span:first-child {
         min-width: 100px;
       }
-  
     }
   }
 }
@@ -518,14 +492,12 @@ a {
       // width: 25%;
       min-width: 200px;
     }
-
   }
-  @media (max-width:575px) {
+  @media (max-width: 575px) {
     .cart-list {
       span:first-child {
         min-width: 100px;
       }
-  
     }
   }
 }
@@ -591,7 +563,7 @@ button {
   height: 400px;
   min-height: 400px;
 }
-.about-banner-founder{
+.about-banner-founder {
   height: 400px;
   min-height: 400px;
 }
@@ -599,7 +571,7 @@ button {
 .story-section {
   height: 300px;
   border-radius: 8px;
-  img{
+  img {
     border-radius: 8px;
   }
 }
@@ -609,7 +581,6 @@ button {
     color: $white;
     text-align: center;
   }
-
 }
 
 .ant-carousel .slick-dots li {
@@ -634,8 +605,7 @@ button {
   }
 }
 
-
-@media (max-width:575px) {
+@media (max-width: 575px) {
   section {
     padding-block: 50px;
   }
@@ -688,7 +658,7 @@ button {
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     background-color: rgba(0, 0, 0, 0.54);
     border-radius: 12px;
     height: 100%;
@@ -749,20 +719,20 @@ button {
   * {
     color: $white;
   }
-  @media (max-width:575px) {
+  @media (max-width: 575px) {
     border-radius: 0;
   }
 }
-.cart-img{
+.cart-img {
   margin: auto;
   height: 100px !important;
   width: 100px !important;
- img{
-height: 100% !important;
-width: 100% !important;
+  img {
+    height: 100% !important;
+    width: 100% !important;
   }
 }
-.text-justify{
+.text-justify {
   text-align: justify;
 }
 .image-container {
@@ -796,66 +766,67 @@ width: 100% !important;
   text-align: center;
 }
 
-
-
 // --------------------------------- New Css -------------------------------
-.hero-section{
-    &::before{
-      position: absolute;
-      content: '';
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.435);
-      z-index: 1;
-      top: 0;
+.hero-section {
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.435);
+    z-index: 1;
+    top: 0;
+  }
+  .navbar-brand {
+    .nav-link {
+      color: #ffffff !important;
     }
-    .navbar-brand{
-      .nav-link{
-        color: #ffffff !important;
-      }
-    }
+  }
+  h1.heading{
+    font-size: 56px;
+  }
+  .border-start{
+    border-color: $primary !important;
+  }
 }
 
-
-.overview-card{
-  .overview-image{
+.overview-card {
+  .overview-image {
     height: 300px;
   }
-  .overview-content{
+  .overview-content {
     color: #fff !important;
   }
 }
 
-
-
-
 // ---- about us----
-.our-story-content{
-  p{
+.our-story-content {
+  p {
     font-size: 20px;
   }
 }
-.core-value-card{
+.core-value-card {
   border-radius: 12px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
-  h4{
+  h4 {
     font-weight: 600;
     font-size: 20px;
   }
-  p{
+  p {
     font-size: 16px;
     color: gray;
   }
-  &:hover{
+  &:hover {
     transform: scale(1.02);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   }
-  .core-value-img{
+  .core-value-img {
     width: 60px;
     height: 60px;
     margin: auto;
-    img{
+    img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
@@ -864,27 +835,26 @@ width: 100% !important;
   }
 }
 
-.tab-heading{
+.tab-heading {
   font-size: 24px;
   cursor: pointer;
 }
-.active-tab{
+.active-tab {
   transition: 0.1s ease-in-out;
   border-bottom: 3px solid #ff0100 !important;
   font-weight: 700 !important;
   color: #ff0100;
 }
 
-.tab-content{
+.tab-content {
   font-size: 20px;
 }
 
-
-h2{
+h2 {
   position: relative;
-  &::after{
+  &::after {
     position: absolute;
-    content: '';
+    content: "";
     width: 100px;
     height: 2px;
     background: red;
@@ -894,8 +864,7 @@ h2{
   }
 }
 
-
-.aboutus{
+.aboutus {
   .hover-card {
     position: relative;
     overflow: hidden;
@@ -904,11 +873,11 @@ h2{
     transition: transform 0.3s ease;
     cursor: pointer;
   }
-  
+
   .hover-card:hover {
     transform: scale(1.02);
   }
-  
+
   .hover-card-image img {
     width: 100%;
     height: 100%;
@@ -916,11 +885,11 @@ h2{
     display: block;
     transition: transform 0.4s ease;
   }
-  
+
   .hover-card:hover .hover-card-image img {
     transform: scale(1.05);
   }
-  
+
   .hover-card-content {
     position: absolute;
     inset: 0;
@@ -936,16 +905,11 @@ h2{
     padding: 1rem;
     transition: opacity 0.4s ease;
   }
-  
+
   .hover-card:hover .hover-card-content {
     opacity: 1;
   }
-  
-  
 }
-
-
-
 
 .industries-section {
   // background-color: #0d0d0d;
@@ -1019,8 +983,6 @@ h2{
   }
 }
 
-
-
 .main-header {
   transition: all 0.3s ease;
   background-color: transparent;
@@ -1041,132 +1003,130 @@ h2{
   color: white;
 }
 
-.our-service-card{
+.our-service-card {
+  .card-col:nth-child(even){
+    margin-top: 60px;
+  }
   .flip-card {
     background: transparent;
     perspective: 1000px;
-    height: 300px;
-    border-radius: 20px;
+    height: 360px;
+    border-radius: 12px;
   }
   
+
   .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 12px;
     transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
   }
-  
+
   .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
   }
-  
-  
+
   .flip-card-front,
   .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 20px;
+    border-radius: 12px;
     overflow: hidden;
+    padding: 20px;
+    text-align: center;
   }
-  
-  .flip-card-front img {
+
+  .flip-card-front {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-  }
-  
-  .flip-card-back {
-    background: rgba(233, 227, 227, 0.411);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.671);
     color: white;
-    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-card-back {
+    background: rgba(0, 0, 0, 0.671);
+    color: white;
+    transform: rotateX(180deg);
     z-index: 2;
   }
-  
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.whychooseusecardtransparent{
+.whychooseusecardtransparent {
   background-color: rgba(255, 255, 255, 0.05) !important;
   backdrop-filter: blur(8px);
   border-radius: 12px;
   color: #fff;
 }
 
-.contactus-section{
+.contactus-section {
   .contact-card-transparent {
     background-color: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(8px);
     border-radius: 12px;
     color: #fff;
   }
-  
+
   .form-control-transparent {
     background-color: rgba(255, 255, 255, 0.08);
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
-  
+
   .form-control-transparent::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
-  
+
   .form-control-transparent:focus {
     background-color: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.6);
     box-shadow: none;
     color: #fff;
   }
-  
+
   .is-invalid {
     border-color: #dc3545 !important;
   }
-  
+
   .invalid-feedback {
     color: #f8d7da;
   }
 }
 
+.navbar-nav {
+  backdrop-filter: blur(40px);
+  background-color: hsla(0, 0%, 94%, 0.149);
+  padding-inline: 24px !important;
+  padding-block: 4px;
+  border-radius: 40px;
+}
 
 
+.client-success-story{
+  background: linear-gradient(#000000b6, #000000b6),url('../assets/accountfinance.jpg') center/cover;
+ background-attachment: fixed;
+ .client-story-image{
+  .client-image{
+    height: 320px;
+  }
+ }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.our-services{
+  h2{
+    position: relative;
+    margin-bottom: 30px !important;
+  }
+  h2::after{
+   left: 0;
+   transform: unset;
+  }
+}

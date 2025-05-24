@@ -5,7 +5,7 @@ import consilting from "@/assets/consulting.jpg"
 import warehouse from "@/assets/warehouse.jpg"
 
 export const HOMEPAGE = {
-  heading: "Transform Your Business with Infinite Outsourcing Solutions",
+  heading: "Transform Your Business with",
   sub_heading: `Empower Your Growth with AI-Driven Workforce Solutions
 In today’s fast-paced US market, businesses need agile, cost-effective solutions to stay
 competitive. Infinite Outsourcing Solutions delivers AI-powered staffing, recruiting, consulting,

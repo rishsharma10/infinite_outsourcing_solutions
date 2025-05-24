@@ -1,56 +1,48 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import { HOMEPAGE } from '@/utils/content';
-import { motion } from 'framer-motion';
-import { url } from 'inspector';
-import banner from '@/assets/supplychain.jpg'
-gsap.registerPlugin(ScrollTrigger);
-
+import React, { useEffect, useRef } from "react";
+// import gsap from 'gsap';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
+import { HOMEPAGE } from "@/utils/content";
+import { motion } from "framer-motion";
+import { url } from "inspector";
+import banner from "@/assets/supplychain.jpg";
+// gsap.registerPlugin(ScrollTrigger);
+import clientImage from "@/assets/staffing.jpg";
 const ClientSuccessStory = () => {
   const storyRef = useRef(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      storyRef.current,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: storyRef.current,
-          start: 'top 80%',
-        },
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     storyRef.current,
+  //     { opacity: 0, y: 50 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 1,
+  //       ease: 'power2.out',
+  //       scrollTrigger: {
+  //         trigger: storyRef.current,
+  //         start: 'top 80%',
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   // Optional: If you have multiple stories
   const clientStories = [
     {
       quote: HOMEPAGE.client_success_stories,
-      author: 'Jane Doe, CTO at FastScale Inc.',
+      author: "Jane Doe, CTO at FastScale Inc.",
     },
     {
       quote: HOMEPAGE.client_success_stories,
-      author: 'John Smith, CEO at TechNova',
+      author: "John Smith, CEO at TechNova",
     },
-    
   ];
 
   return (
     <section
       ref={storyRef}
-      className="py-5 px-3 position-relative text-white"
-      style={{
-        //   backgroundImage: url(),
-        background: "linear-gradient(135deg,rgba(18, 19, 20, 0.29),rgb(13, 14, 15))",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backdropFilter: "blur(1px)",
-      }}
+      className="px-3 position-relative text-white client-success-story"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -58,18 +50,54 @@ const ClientSuccessStory = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="container">
-          <h2 className="display-6 fw-bold text-center mb-5">Client Success Story</h2>
+          <h2 className="display-6 fw-bold text-center mb-5">
+            Client Success Story
+          </h2>
           <div className="row justify-content-center">
-            <div className="col-md-10 bg-white bg-opacity-10 p-4 rounded-4 shadow-lg">
-              <div id="clientCarousel" className="carousel slide" data-bs-ride="carousel">
+            <div className="col-md-10">
+              <div
+                id="clientCarousel"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner">
                   {clientStories.map((story, index) => (
                     <div
-                      className={`carousel-item ${index === 0 ? 'active' : ''}`}
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
                       key={index}
                     >
-                      <p className="fs-5">"{story.quote}"</p>
-                      <p className="fw-semibold text-end">— {story.author}</p>
+                      <div className="row gx-5 py-5">
+                        <div className="col-md-6">
+                          <div className="client-story-image">
+                            <div className="row g-0">
+                              <div className="col-md-6">
+                                <div className="client-image">
+                                  <img
+                                    src={banner.src}
+                                    alt="error"
+                                    className="img-fluid"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-6 mt-5">
+                                <div className="client-image">
+                                  <img
+                                    src={clientImage.src}
+                                    alt="error"
+                                    className="img-fluid"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6 align-self-end">
+                          <p className="fs-16 lh-lg">"{story.quote}"</p>
+                          <p className="fw-semibold fs-14 text-theme text-end">
+                            — {story.author}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -79,7 +107,10 @@ const ClientSuccessStory = () => {
                   data-bs-target="#clientCarousel"
                   data-bs-slide="prev"
                 >
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
                   <span className="visually-hidden">Previous</span>
                 </button>
                 <button
@@ -88,7 +119,10 @@ const ClientSuccessStory = () => {
                   data-bs-target="#clientCarousel"
                   data-bs-slide="next"
                 >
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>

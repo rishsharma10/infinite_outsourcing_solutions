@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { fadeUp, slideInLeft, slideInRight } from "@/lib/animation";
 import { SectionReveal } from "@/components/PageTransition";
 import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import { HOMEPAGE } from "@/utils/content";
 
 export default function AboutUsSection2() {
@@ -10,27 +9,27 @@ export default function AboutUsSection2() {
   const titleRef = useRef(null);
   const descRef = useRef(null);
 
-  useEffect(() => {
-    gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
-    gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
-    cardsRef.current.forEach((card: any, index: number) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
+  //   gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
+  //   cardsRef.current.forEach((card: any, index: number) => {
+  //     gsap.fromTo(
+  //       card,
+  //       { opacity: 0, y: 50 },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 0.6,
+  //         delay: index * 0.2,
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 80%",
+  //           toggleActions: "play none none none",
+  //         },
+  //       }
+  //     );
+  //   });
+  // }, []);
   return (
     <section className="position-relative min-vh-100 d-flex align-items-center pt-5 mt-5">
       {/* Background Elements */}

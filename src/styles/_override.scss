@@ -33,9 +33,11 @@
       }
 
       .ant-menu-item-selected {
-        background: linear-gradient(90deg,
-            rgba(153, 122, 247, 0.1) 0%,
-            rgba(152, 122, 246, 0.02) 100%) !important;
+        background: linear-gradient(
+          90deg,
+          rgba(153, 122, 247, 0.1) 0%,
+          rgba(152, 122, 246, 0.02) 100%
+        ) !important;
         border-left: 2px solid $primary !important;
         color: $primary !important;
 
@@ -75,9 +77,48 @@
 }
 
 .btn-secondary {
-  background: $gradient-light !important;
+  background: $gradient-secondary !important;
   border: none !important;
   color: $white !important;
+  border-radius: 45px !important;
+}
+.btn-primary {
+  background: #12121265 !important;
+  color: $white !important;
+  border-color: #ffffff80 !important;
+  border-radius: 45px !important;
+  transition: 0.3s;
+  position: relative;
+  &::before {
+    content: "";
+    height: 0;
+    width: 0;
+    background: $primary !important;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    border-radius: 45px;
+    transition: 0.3s;
+    color: $white !important;
+  }
+  span {
+    position: relative;
+    transition: 0.3s;
+    font-weight: 700;
+  }
+  &:hover {
+    border-color: $primary !important;
+    transition: 0.3s;
+    &::before {
+      width: 100%;
+      height: 100%;
+    }
+      span {
+        color: $white !important;
+      }
+  }
 }
 
 .ant-typography-secondary {
@@ -99,23 +140,28 @@
   }
 }
 
-table>tbody>tr:nth-child(odd) {
+table > tbody > tr:nth-child(odd) {
   background: $primary-light !important;
 }
 
-table>tbody>tr:nth-child(even) {
+table > tbody > tr:nth-child(even) {
   background: $white !important;
 }
 
-.ant-table-wrapper .ant-table-thead>tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+.ant-table-wrapper
+  .ant-table-thead
+  > tr
+  > th:not(:last-child):not(.ant-table-selection-column):not(
+    .ant-table-row-expand-icon-cell
+  ):not([colspan])::before {
   content: unset !important;
 }
 
-table>thead>tr>th:first-child {
+table > thead > tr > th:first-child {
   border-radius: 16px 0 0 0 !important;
 }
 
-table>thead>tr>th:last-child {
+table > thead > tr > th:last-child {
   border-radius: 0 16px 0 0 !important;
 }
 
@@ -185,7 +231,7 @@ th {
   padding: 0px 20px !important;
   font-size: 14px !important;
 }
-.ant-select-selector{
+.ant-select-selector {
   outline: none !important;
   box-shadow: none !important;
 }
@@ -319,7 +365,6 @@ th {
   display: none !important;
 }
 
-
 .pac-container {
   border-radius: 10px !important;
 
@@ -377,7 +422,6 @@ th {
     }
 
     & .tf-nc {
-
       &::after,
       &::before {
         height: 2em !important;
@@ -529,14 +573,12 @@ ul.active-subparent.main-child {
   display: none;
 }
 
-
 .custom-select .ant-select-selection-search-input {
   caret-color: transparent !important;
   /* Hides the blinking cursor */
   pointer-events: none !important;
   /* Disables input field interaction */
 }
-
 
 // .notification-dropdown-menu-item {
 //   max-height: 500px !important;
@@ -545,7 +587,6 @@ ul.active-subparent.main-child {
 ul.notification-dropdown-menu {
   width: 500px !important;
 }
-
 
 .notification-div {
   max-height: 480px !important;
@@ -616,7 +657,6 @@ ul.notification-dropdown-menu {
   }
 }
 
-
 .ant-btn-background-ghost {
   position: relative;
 
@@ -626,7 +666,7 @@ ul.notification-dropdown-menu {
 
   &::before {
     position: absolute;
-    content: '';
+    content: "";
     height: 0;
     width: 0;
     transition: 0.3s;
@@ -647,8 +687,8 @@ ul.notification-dropdown-menu {
   }
 }
 
-.contact-text{
-  .ant-btn-background-ghost span{
+.contact-text {
+  .ant-btn-background-ghost span {
     color: $white !important;
   }
 }
@@ -659,9 +699,9 @@ ul.notification-dropdown-menu {
   overflow: hidden;
 
   img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 .cart-image-checkout {
@@ -671,25 +711,63 @@ ul.notification-dropdown-menu {
   overflow: hidden;
 
   img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 }
 .boat-sharing {
   .btn {
-      border: 1px solid $primary;
-      font-weight: 600;
-      border-radius: 15px;
+    border: 1px solid $primary;
+    font-weight: 600;
+    border-radius: 15px;
 
-      &:hover {
-          background: rgb(246, 246, 246);
-      }
+    &:hover {
+      background: rgb(246, 246, 246);
+    }
   }
 }
-.cart-section-checkout{
+.cart-section-checkout {
   background: #ddceee55;
 }
-.cart-section-checkout-withoutbg{
-  background:"none";
+.cart-section-checkout-withoutbg {
+  background: "none";
+}
+
+.text-theme{
+  color: $primary-light !important;
+}
+
+.carousel-control-prev{
+  height: 30px !important;
+  width: 36px !important;
+  background-color: $primary;
+  opacity: 1;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: center;
+  bottom: 0 !important;
+  top: auto !important;
+  right: 45px !important;
+  left: auto !important;
+}
+
+.carousel-control-next{
+  height: 30px !important;
+  width: 36px !important;
+  background-color: $primary;
+  opacity: 1;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  justify-content: center;
+   bottom: 0 !important;
+  top: auto !important;
+}
+
+.lh-lg{
+  line-height: 26px !important;
 }

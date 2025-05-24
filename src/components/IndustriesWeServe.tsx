@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import account from "@/assets/accountfinance.jpg";
 import manufacture from "@/assets/manufacturer.jpg";
 import pharmacuticals from "@/assets/pharmacuticals.jpg";
@@ -8,7 +8,7 @@ import supplychain from "@/assets/supplychain.jpg";
 import { cardHover, fadeUp } from "@/lib/animation";
 import { motion } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const industries = [
   {
@@ -34,27 +34,27 @@ const IndustriesWeServe = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
 
-  useEffect(() => {
-    gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
-    gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
-    cardsRef.current.forEach((card: any, index: number) => {
-      gsap.fromTo(
-        card,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
+  //   gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
+  //   cardsRef.current.forEach((card: any, index: number) => {
+  //     gsap.fromTo(
+  //       card,
+  //       { opacity: 0, y: 50 },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 0.6,
+  //         delay: index * 0.2,
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 80%",
+  //           toggleActions: "play none none none",
+  //         },
+  //       }
+  //     );
+  //   });
+  // }, []);
 
   return (
     <div className="industries-section">
