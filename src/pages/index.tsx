@@ -16,6 +16,8 @@ import ClientSuccessStory from "@/components/ClientSuccessStory";
 import OurServicesSection from "@/components/OurServicesections";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
+import CompanyOverview from "@/components/companyOverview";
+import OurIndustry from "@/components/ourIndustry";
 
 const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -158,17 +160,18 @@ const HomePage = () => {
               <div className="position-relative z-2">
                 <div className="row pb-5 gx-5">
                   <div className="col-md-7">
-                    <h1 className="text-white heading">{HOMEPAGE.heading}
-                      <span className="ps-3 text-theme">Infinite Outsourcing Solutions</span>
+                    <h1 className="text-white heading">
+                      {HOMEPAGE.heading}
+                      <span className="ps-3 text-theme">
+                        Infinite Outsourcing Solutions
+                      </span>
                     </h1>
                     <button className="btn btn-primary px-4 py-2">
                       <span>Lorem, ipsum.</span>
                     </button>
                   </div>
                   <div className="col-md-5 border-start align-self-end py-3">
-                    <p className="text-white fs-16">
-                      {HOMEPAGE.sub_heading}
-                    </p>
+                    <p className="text-white fs-16">{HOMEPAGE.sub_heading}</p>
                     <div className="d-flex align-items-center gap-2 mt-4">
                       <button className="btn btn-primary px-4 py-2">
                         <span>Lorem, ipsum.</span>
@@ -198,60 +201,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* <SectionReveal>
-        <section className="company-overview">
-          <div className="container">
-            <div className="row gy-3">
-              <motion.div
-                variants={fadeUp}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="col-12 mb-4">
-                  <h2 className="fw-semibold text-white">Company Overview</h2>
-                  <hr className="text-white" />
-                </div>
-              </motion.div>
-              <div className="col-md-4">
-                <div className="overview-card">
-                  <div className="overview-image mb-4">
-                    <img src={overviewImage.src} alt="" className="img-fluid" />
-                  </div>
-                  <div className="overview-content">
-                    <p>{HOMEPAGE.company_overview.desc_1}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4" style={{ marginTop: 80 }}>
-                <div className="overview-card">
-                  <div className="overview-image mb-4">
-                    <img
-                      src={overviewImage2.src}
-                      alt=""
-                      className="img-fluid"
-                    />
-                  </div>
-                  <div className="overview-content">
-                    <p>{HOMEPAGE.company_overview.desc_2}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4" style={{ marginTop: 160 }}>
-                <div className="overview-card">
-                  <div className="overview-image mb-4">
-                    <img src={overviewImage.src} alt="" className="img-fluid" />
-                  </div>
-                  <div className="overview-content">
-                    <p>{HOMEPAGE.company_overview.desc_3}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </SectionReveal> */}
+      <CompanyOverview/>
       <OurServicesSection />
+      <OurIndustry/>
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}

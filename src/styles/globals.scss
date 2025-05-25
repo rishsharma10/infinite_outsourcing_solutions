@@ -12,29 +12,6 @@ body,
   font-family: "Nunito", sans-serif;
 }
 
-body {
-  // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/gpt6_1747838874023.jpg'); /* Update with your path */
-  // background-image: url('https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/rea1_1747839125883.jpg'); /* Update with your path */
-  background-image: url("https://sharedecommerce.nyc3.digitaloceanspaces.com/sharedecommerce/original/244442cc_3d30_4cd8_addb_5862933452c9_1747842946559.jpg"); /* Update with your path */
-  // background: #0d0d0d;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  z-index: -1;
-}
-// .global-bg {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   height: 100vh;
-//   width: 100vw;
-//   background-image: url('/images/background.jpg');
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   z-index: -1;
-// }
 h2 {
   color: #fff !important;
 }
@@ -795,8 +772,16 @@ button {
     height: 300px;
   }
   .overview-content {
-    color: #fff !important;
+    color: $black;
+    font-size: 14px;
+    color: $secondary;
   }
+}
+.overview-col:nth-child(2){
+  margin-top: 60px;
+}
+.overview-col:nth-child(3){
+  margin-top: 120px;
 }
 
 // ---- about us----
@@ -1045,7 +1030,7 @@ h2 {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    background: rgba(0, 0, 0, 0.671);
+    background: #000a3387;
     color: white;
     display: flex;
     align-items: center;
@@ -1053,7 +1038,7 @@ h2 {
   }
 
   .flip-card-back {
-    background: rgba(0, 0, 0, 0.671);
+    background: #000a3387;
     color: white;
     transform: rotateX(180deg);
     z-index: 2;
@@ -1116,11 +1101,14 @@ h2 {
  .client-story-image{
   .client-image{
     height: 320px;
+    border-radius: 30px;
+    overflow: hidden;
   }
  }
 }
 
 .our-services{
+  background-color: #000a33;
   h2{
     position: relative;
     margin-bottom: 30px !important;
