@@ -41,7 +41,7 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.8, ease: "easeInOut", delay },
+          transition: { duration: 2, ease: "easeInOut", delay },
         },
       }}
       className="overview-card"
@@ -49,7 +49,7 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
       <div className="overview-image">
         <img src={image.src} alt="Card image" className="img-fluid" />
       </div>
-      <div className="overview-content">
+      <div className="overview-content w-75">
         <p className="mt-4">{text}</p>
       </div>
     </motion.div>
@@ -61,7 +61,7 @@ export default function CompanyOverview() {
     <section className="company-overview">
       <div className="container">
         <h2 className="text-dark text-center mb-5">Company Overview</h2>
-        <div className="row pt-5">
+        <div className="row pt-5 gx-5">
           {cards.map((card, index) => (
             <div className="col-md-6 col-lg-4 overview-col">
               <Card key={index} {...card} delay={index * 0.3} />

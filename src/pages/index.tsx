@@ -63,9 +63,7 @@ const HomePage = () => {
     <>
       <section className="hero-section pt-0 pb-4 position-relative">
         <header
-          className={`main-header position-fixed w-100 ${
-            scrolled ? "scrolled z-3" : "z-3"
-          }`}
+          className={`main-header position-fixed z-3 w-100 ${scrolled ? "d-none" : ""}`}
         >
           <nav className="navbar navbar-expand-lg bg-transparent py-3">
             <div className="container">

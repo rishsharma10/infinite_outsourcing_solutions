@@ -9,13 +9,14 @@
 
 .circleBorder {
   position: absolute;
-  border: 2px dashed #000a33;
+  // border: 2px dashed #000a33;
   border-radius: 50%;
+  background: url('../assets/border.jpg') center/cover no-repeat;
 }
 
 .circleBorder:nth-child(1) {
-  width: 600px;
-  height: 600px;
+  width: 700px;
+  height: 700px;
 }
 .circleBorder:nth-child(2) {
   width: 520px;
@@ -68,17 +69,6 @@
   justify-content: center;
   font-size: 24px;
   cursor: pointer;
-}
-
-
-.hero {
-  background-color: #050b3a;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
 }
 
 .dots {

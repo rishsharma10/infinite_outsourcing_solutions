@@ -42,7 +42,7 @@ export default function OurIndustry() {
             &larr;
           </div>
 
-          <motion.div
+          {/* <motion.div
             key={current}
             // initial={{ scale: 1 }}
             // animate={{ scale: [0.2, 1, 0.2] }}
@@ -84,9 +84,9 @@ export default function OurIndustry() {
                 </a>
               </div>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* <motion.div className={styles.circleContainer}>
+          <motion.div className={styles.circleContainer}>
             <motion.div
               className={styles.circleBorder}
               animate={{ rotate: 360 }}
@@ -122,7 +122,7 @@ export default function OurIndustry() {
                 </a>
               </div>
             </motion.div>
-          </motion.div> */}
+          </motion.div>
 
           <div className={styles.navBtn} onClick={next}>
             &rarr;

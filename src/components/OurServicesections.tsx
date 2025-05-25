@@ -82,10 +82,10 @@ export default function OurServicesSections() {
                 />
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <h5 className="fw-semibold fs-3">{service.title}</h5>
+                    <h5 className="fw-semibold fs-1">{service.title}</h5>
                   </div>
                   <div className="flip-card-back text-white p-4 d-flex flex-column justify-content-center align-items-center">
-                    <p className="mb-3 lh-lg">{service.description}</p>
+                    <p className="mb-3 fs-4">{service.description}</p>
                     {/* <Button type="button" className="btn btn-primary">{service.cta}</Button> */}
                   </div>
                 </div>
