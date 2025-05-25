@@ -69,3 +69,40 @@
   font-size: 24px;
   cursor: pointer;
 }
+
+
+.hero {
+  background-color: #050b3a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dots {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background-image: radial-gradient(circle, #8a2be2 1px, transparent 1px);
+  background-size: 20px 20px;
+  transform: translateX(-50%);
+  transform-origin: center center; /* <--- This is important */
+  opacity: 0.3;
+  border-radius: 50%;
+  z-index: 0;
+  animation: rotateAnimation 20s linear infinite;
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
