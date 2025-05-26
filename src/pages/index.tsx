@@ -9,7 +9,7 @@ import overviewImage2 from "@/assets/overview-2.jpg";
 import { SectionReveal } from "@/components/PageTransition";
 import { fadeUp } from "@/lib/animation";
 import ContactSection from "@/components/contactus/ContactSection";
-import Footer from "@/components/layout/Footer";
+// import Footer from "@/components/layout/Footer";
 import AboutSection from "@/components/aboutus/AboutSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ClientSuccessStory from "@/components/ClientSuccessStory";
@@ -18,7 +18,11 @@ import IndustriesWeServe from "@/components/IndustriesWeServe";
 import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
 import CompanyOverview from "@/components/companyOverview";
 import OurIndustry from "@/components/ourIndustry";
+import dynamic from 'next/dynamic';
 
+const Footer = dynamic(() => import('@/components/layout/Footer'), {
+  ssr: false, // important to prevent server-side rendering
+});
 const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
 
