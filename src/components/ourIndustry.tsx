@@ -35,7 +35,7 @@ export default function OurIndustry() {
   }, []);
 
   return (
-    <section className="">
+    <section className="py-0">
       <div className="container d-flex justify-content-center align-items-center min-vh-100">
         <div className="d-flex align-items-center w-100">
           <div className={styles.navBtn} onClick={prev}>
@@ -86,7 +86,11 @@ export default function OurIndustry() {
             </motion.div>
           </motion.div> */}
 
-          <motion.div className={styles.circleContainer}>
+          <motion.div className={styles.circleContainer}
+            key={current}
+            initial={{ scale: 1, opacity: 0 }}
+            animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
+            transition={{ duration: 2, ease: "easeOut" }}>
             <motion.div
               className={styles.circleBorder}
               animate={{ rotate: 360 }}
@@ -104,10 +108,10 @@ export default function OurIndustry() {
             />
 
             <motion.div
-              key={current}
-              initial={{ scale: 1, opacity: 0 }}
-              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              transition={{ duration: 2, ease: "easeOut" }}
+              // key={current}
+              // initial={{ scale: 1, opacity: 0 }}
+              // animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              // transition={{ duration: 2, ease: "easeOut" }}
               className={styles.carouselCircle}
             >
               <img
@@ -123,6 +127,7 @@ export default function OurIndustry() {
               </div>
             </motion.div>
           </motion.div>
+          
 
           <div className={styles.navBtn} onClick={next}>
             &rarr;
