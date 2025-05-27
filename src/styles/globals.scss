@@ -16,7 +16,7 @@ body,
 
 h2 {
   color: #fff !important;
-  font-family: "Radio Canada", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 h1{
   font-family: "Inter", sans-serif;
@@ -841,20 +841,20 @@ button {
   font-size: 20px;
 }
 
-// h2 {
-//   position: relative;
-//   font-size: 40px;
-//   &::after {
-//     position: absolute;
-//     content: "";
-//     width: 100px;
-//     height: 2px;
-//     background: red;
-//     bottom: -10px;
-//     left: 50%;
-//     transform: translateX(-50%);
-//   }
-// }
+h2 {
+  position: relative;
+  font-size: 40px;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background: red;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 
 .aboutus {
   .hover-card {

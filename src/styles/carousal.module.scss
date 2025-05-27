@@ -9,14 +9,14 @@
 
 .circleBorder {
   position: absolute;
-  // border: 2px dashed #000a33;
+  border: 2px dashed #000a33;
   border-radius: 50%;
-  background: url('../assets/border.jpg') center/cover no-repeat;
+  // background: url('../assets/border.jpg') center/cover no-repeat;
 }
 
 .circleBorder:nth-child(1) {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
 }
 .circleBorder:nth-child(2) {
   width: 520px;

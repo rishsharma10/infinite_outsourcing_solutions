@@ -88,9 +88,17 @@ export default function OurIndustry() {
 
           <motion.div className={styles.circleContainer}
             key={current}
-            initial={{ scale: 1, opacity: 0 }}
-            animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
-            transition={{ duration: 2, ease: "easeOut" }}>
+            animate={{
+              scale: [1.1, 0.2, 1.1],
+              rotate: [0, 180, 0,],
+              opacity:[1, 0.2, 1]
+            }}
+            transition={{
+              duration: 3,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatDelay: 3
+            }}>
             <motion.div
               className={styles.circleBorder}
               animate={{ rotate: 360 }}

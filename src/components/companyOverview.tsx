@@ -37,10 +37,13 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
       initial="hidden"
       animate={controls}
       variants={{
-        hidden: { opacity: 0 },
+        hidden: { opacity: 0, y:100, x:60, translateY:100 },
         visible: {
-          opacity: 1,
-          transition: { duration: 3, ease: "easeInOut", delay },
+          opacity:1,
+          translateY:0,
+          y:0,
+          x:0,
+          transition: { duration: 1, ease: "easeInOut", delay },
         },
       }}
       className="overview-card"
@@ -63,7 +66,7 @@ export default function CompanyOverview() {
         <div className="row pt-5 gx-5">
           {cards.map((card, index) => (
             <div className="col-md-6 col-lg-4 overview-col">
-              <Card key={index} {...card} delay={index * 0.3} />
+              <Card key={index} {...card} delay={index * 0.4} />
             </div>
           ))}
         </div>
