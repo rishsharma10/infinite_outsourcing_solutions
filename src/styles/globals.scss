@@ -765,8 +765,13 @@ button {
       color: #ffffff !important;
     }
   }
-  h1.heading{
+h2.heading{
     font-size: 56px;
+    font-weight:700;
+    line-height: 70px;
+    &::after{
+      display:none !important;
+    }
   }
   .border-start{
     border-color: $primary !important;

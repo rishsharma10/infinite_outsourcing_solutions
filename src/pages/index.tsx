@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "@/assets/logo-white.png";
 import logoblack from "@/assets/logoblack.png";
 import { HOMEPAGE } from "@/utils/content";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import AnimText from "@/components/AnimText";
 import overviewImage from "@/assets/overview.webp";
 import overviewImage2 from "@/assets/overview-2.jpg";
@@ -18,9 +18,9 @@ import IndustriesWeServe from "@/components/IndustriesWeServe";
 import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
 import CompanyOverview from "@/components/companyOverview";
 import OurIndustry from "@/components/ourIndustry";
-import dynamic from 'next/dynamic';
-
-const Footer = dynamic(() => import('@/components/layout/Footer'), {
+import dynamic from "next/dynamic";
+import { HomePageTitle } from "@/components/homePageTitle";
+const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false, // important to prevent server-side rendering
 });
 const HomePage = () => {
@@ -63,11 +63,16 @@ const HomePage = () => {
     },
   };
 
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
   return (
     <>
       <section className="hero-section pt-0 pb-4 position-relative">
         <header
-          className={`main-header position-fixed z-3 w-100 ${scrolled ? "d-none" : ""}`}
+          className={`main-header position-fixed z-3 w-100 ${
+            scrolled ? "d-none" : ""
+          }`}
         >
           <nav className="navbar navbar-expand-lg bg-transparent py-3">
             <div className="container">
@@ -162,12 +167,13 @@ const HomePage = () => {
               <div className="position-relative z-2">
                 <div className="row pb-5 gx-5">
                   <div className="col-md-7">
-                    <h1 className="text-white heading">
-                      {HOMEPAGE.heading}
+                    <h1 className="text-white">
+                      {/* {HOMEPAGE.heading} */}
                       <span className="ps-3 text-theme">
-                        Infinite Outsourcing Solutions
+                       
                       </span>
                     </h1>
+                    <HomePageTitle text={HOMEPAGE.heading} />
                     <button className="btn btn-primary px-4 py-2">
                       <span>Lorem, ipsum.</span>
                     </button>
@@ -203,9 +209,9 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <CompanyOverview/>
+      <CompanyOverview />
       <OurServicesSection />
-      <OurIndustry/>
+      <OurIndustry />
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
