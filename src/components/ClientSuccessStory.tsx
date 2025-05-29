@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-// import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { HOMEPAGE } from "@/utils/content";
 import { motion } from "framer-motion";
 import { url } from "inspector";
@@ -26,6 +26,60 @@ const ClientSuccessStory = () => {
   //     }
   //   );
   // }, []);
+
+useEffect(() => {
+  const carousel = document.getElementById("clientCarousel");
+
+  if (!carousel) return;
+
+  const animateActiveSlide = () => {
+    const activeSlide = carousel.querySelector(".carousel-item.active");
+    if (!activeSlide) return;
+
+    const images = activeSlide.querySelectorAll(".client-image img");
+    const text = activeSlide.querySelectorAll("p");
+
+    // Create a timeline for smoother sequencing
+    const tl = gsap.timeline();
+
+    tl.fromTo(
+      images,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1.2,
+        ease: "power3.out",
+        clearProps: "all", // clears inline styles after animation
+      }
+    ).fromTo(
+      text,
+      { x: 50, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1.2,
+        ease: "power3.out",
+        clearProps: "all",
+      },
+      "-=0.8" // overlap the text animation starting 0.8 seconds before the previous ends
+    );
+  };
+
+  // Animate first slide on load
+  animateActiveSlide();
+
+  // Animate on slide change
+  carousel.addEventListener("slid.bs.carousel", animateActiveSlide);
+
+  return () => {
+    carousel.removeEventListener("slid.bs.carousel", animateActiveSlide);
+  };
+}, []);
+
+
 
   // Optional: If you have multiple stories
   const clientStories = [
