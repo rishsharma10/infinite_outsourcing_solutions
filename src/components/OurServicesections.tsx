@@ -6,6 +6,7 @@ import { HOMEPAGE } from "@/utils/content";
 import styles from "@/styles/ContactSection.module.css";
 import { fadeUp } from "@/lib/animation";
 import { motion } from "framer-motion";
+import BannerDescriptionComponents from "./banner/BannerDescription";
 
 export default function OurServicesSections() {
   const titleRef = useRef(null);

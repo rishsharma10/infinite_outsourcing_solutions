@@ -13,6 +13,7 @@ import ContactSection from "@/components/contactus/ContactSection";
 import AboutSection from "@/components/aboutus/AboutSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ClientSuccessStory from "@/components/ClientSuccessStory";
+import BannerComponents from "@/components/banner/Banner";
 import OurServicesSection from "@/components/OurServicesections";
 import IndustriesWeServe from "@/components/IndustriesWeServe";
 import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
@@ -20,6 +21,11 @@ import CompanyOverview from "@/components/companyOverview";
 import OurIndustry from "@/components/ourIndustry";
 import dynamic from "next/dynamic";
 import { HomePageTitle } from "@/components/homePageTitle";
+import BannerComponent from "@/components/banner/Banner";
+import BannerDescriptionComponents from "@/components/banner/BannerDescription";
+import ElectricComponent from "@/components/electric/Electric";
+import NewIndustryComponent from "@/components/industry/NewIndustryComponent";
+import WhyChooseText from "@/components/WhyChooseText";
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false, // important to prevent server-side rendering
 });
@@ -142,9 +148,9 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
                 </ul>
 
                 <div className="d-flex">
-                  <button className="btn btn-primary rounded-pill px-4">
+                  {/* <button className="btn btn-primary rounded-pill px-4">
                     <span>Login</span>
-                  </button>
+                  </button> */}
                   {/* <button className="btn btn-primary rounded-pill px-4">Signup</button> */}
                 </div>
               </div>
@@ -152,71 +158,25 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
           </nav>
         </header>
 
-        {/* hero-video */}
-        <video
-          src="/servicevehicle.mp4"
-          autoPlay={true}
-          loop={true}
-          className="position-absolute h-100 w-100 object-fit-cover"
-        ></video>
-
-        {/* hero-content */}
-        <div className="container h-100">
-          <div className="row align-items-end justify-content-center h-100">
-            <div className="col-12">
-              <div className="position-relative z-2">
-                <div className="row pb-5 gx-5">
-                  <div className="col-md-7">
-                    <h1 className="text-white">
-                      {/* {HOMEPAGE.heading} */}
-                      <span className="ps-3 text-theme">
-                       
-                      </span>
-                    </h1>
-                    <HomePageTitle text={HOMEPAGE.heading} />
-                    <button className="btn btn-primary px-4 py-2">
-                      <span>Lorem, ipsum.</span>
-                    </button>
-                  </div>
-                  <div className="col-md-5 border-start align-self-end py-3">
-                    <p className="text-white fs-16">{HOMEPAGE.sub_heading}</p>
-                    <div className="d-flex align-items-center gap-2 mt-4">
-                      <button className="btn btn-primary px-4 py-2">
-                        <span>Lorem, ipsum.</span>
-                      </button>
-                      <button className="btn btn-primary px-4 py-2">
-                        <span>Lorem, ipsum.</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                {/* <motion.div className="d-flex w-100 align-items-center justify-content-center">
-                  <motion.div
-                    variants={containerVariants}
-                    animate="visible"
-                    initial="hidden"
-                  >
-                    <motion.span
-                      variants={itemVariants}
-                      className="d-inline h-100 w-100 p-4 fs-1 text-white"
-                    >
-                      <AnimText delay={1} />
-                    </motion.span>
-                  </motion.div>
-                </motion.div> */}
-              </div>
-            </div>
-          </div>
-        </div>
+      
+      <BannerComponent/>
       </section>
+      <ElectricComponent/>
       <CompanyOverview />
       <OurServicesSection />
       <OurIndustry />
+      {/* <NewIndustryComponent/> */}
+      {/* <WhyChooseText/> */}
+      <div style={{background:"#000"}}>
+
+      <WhyChooseUsSection/>
+      </div>
+      <ClientSuccessStory />
+      <BannerDescriptionComponents/>
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
-      <ClientSuccessStory />
       {/* <ContactSection /> */}
       <Footer />
     </>

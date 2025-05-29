@@ -1,26 +1,36 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "@/styles/carousal.module.scss";
-import overviewImage from "@/assets/overview.webp";
-import overviewImage2 from "@/assets/overview-2.jpg";
+import accountfinance from "@/assets/accountfinance.jpg";
+import Manufacturing from "@/assets/manufacturer.jpg";
+import Pharmaceuticals from "@/assets/pharmacuticals.jpg";
+import supplychain from "@/assets/supplychain.jpg";
+import { fadeUp } from "@/lib/animation";
+import { HOMEPAGE } from "@/utils/content";
 
 const items = [
   {
-    image: overviewImage,
-    title: "Segmentación de clientes",
+    image: accountfinance,
+    title: "Accounting & Finance",
   },
   {
-    image: overviewImage2,
-    title: "Recomendación de productos",
+    image: Manufacturing,
+    title: "Manufacturing",
   },
   {
-    image: overviewImage,
-    title: "Optimización de procesos",
+    image: Pharmaceuticals,
+    title: "Pharmaceuticals",
+  },
+  {
+    image: supplychain,
+    title: "Supply Chain",
   },
 ];
 
 export default function OurIndustry() {
+  const titleRef = useRef(null);
+    const descRef = useRef(null);
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((prev) => (prev + 1) % items.length);
@@ -30,12 +40,34 @@ export default function OurIndustry() {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    }, 6000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="py-0">
+    <section className="py-0 mt-3">
+      <div className="d-flex justify-content-center">
+
+          <motion.div
+                  variants={fadeUp}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="row justify-content-between flex-column">
+                      <h2
+                        ref={titleRef}
+                        className="display-4 fw-bold mb-3 text-black text-shadow"
+                      >
+                        Industries We Serve
+                      </h2>
+                      <p ref={descRef} className="lead mb-4 text-black">
+                      We empower businesses across diverse sectors, including
+                      </p>
+                  </div>
+                </motion.div>
+      </div>
+
       <div className="container d-flex justify-content-center align-items-center min-vh-100">
         <div className="d-flex align-items-center w-100">
           <div className={styles.navBtn} onClick={prev}>
@@ -90,36 +122,35 @@ export default function OurIndustry() {
             key={current}
             animate={{
               scale: [1.1, 0.2, 1.1],
-              rotate: [0, 180, 0,],
+              // rotate: [0, 180, 0,],
               opacity:[1, 0.2, 1]
             }}
-            transition={{
-              duration: 3,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatDelay: 3
-            }}>
-            <motion.div
-              className={styles.circleBorder}
-              animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+            >
+            {/* <motion.div
+             key={current}
+              className={styles.circleBorder}
+              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
             />
             <motion.div
+             key={current}
               className={styles.circleBorder}
-              animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
             />
             <motion.div
+             key={current}
               className={styles.circleBorder}
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 50, ease: "linear" }}
-            />
+              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+            /> */}
 
             <motion.div
-              // key={current}
-              // initial={{ scale: 1, opacity: 0 }}
-              // animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              // transition={{ duration: 2, ease: "easeOut" }}
+              key={current}
+              initial={{ scale: 1, opacity: 0 }}
+              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              transition={{ duration: 10, ease: "linear" }}
               className={styles.carouselCircle}
             >
               <img

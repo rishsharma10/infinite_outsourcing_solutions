@@ -3,6 +3,10 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import overviewImage from "@/assets/overview.webp";
 import overviewImage2 from "@/assets/overview-2.jpg";
 import { HOMEPAGE } from "@/utils/content";
+import gsap from "gsap";
+import DrawSVGPlugin from "gsap/DrawSVGPlugin";
+import { useGSAP } from "@gsap/react";
+import DrawSvg from "./DrawSvg";
 const cards = [
   {
     image: overviewImage,
@@ -17,7 +21,7 @@ const cards = [
     text: HOMEPAGE.company_overview.desc_3,
   },
 ];
-
+gsap.registerPlugin(DrawSVGPlugin) 
 const Card = ({ image, text, source, delay = 0 }: any) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
@@ -30,6 +34,9 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
       controls.start("hidden");
     }
   }, [inView]);
+  useGSAP(() => {
+    gsap.from(".draw-me", {duration:1,drawSVG: true});
+})
 
   return (
     <motion.div
@@ -48,7 +55,7 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
       }}
       className="overview-card"
     >
-      <div className="overview-image">
+      <div className="overview-image draw-me">
         <img src={image.src} alt="Card image" className="img-fluid" />
       </div>
       <div className="overview-content w-75">
