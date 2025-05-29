@@ -16,7 +16,6 @@ export default function Footer() {
             <div className="col-12">
               <ParticlesScene />
             </div>
-           
           </div>
           <div className="row align-items-center position-absolute bottom-0 start-0 end-0 mx-auto z-3">
              <div className="col-12">

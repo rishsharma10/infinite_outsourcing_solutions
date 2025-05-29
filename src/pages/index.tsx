@@ -153,6 +153,7 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
         </header>
 
         {/* hero-video */}
+        
         <video
           src="/servicevehicle.mp4"
           autoPlay={true}
@@ -190,20 +191,6 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
                     </div>
                   </div>
                 </div>
-                {/* <motion.div className="d-flex w-100 align-items-center justify-content-center">
-                  <motion.div
-                    variants={containerVariants}
-                    animate="visible"
-                    initial="hidden"
-                  >
-                    <motion.span
-                      variants={itemVariants}
-                      className="d-inline h-100 w-100 p-4 fs-1 text-white"
-                    >
-                      <AnimText delay={1} />
-                    </motion.span>
-                  </motion.div>
-                </motion.div> */}
               </div>
             </div>
           </div>

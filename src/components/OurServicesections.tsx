@@ -6,12 +6,15 @@ import { HOMEPAGE } from "@/utils/content";
 import styles from "@/styles/ContactSection.module.css";
 import { fadeUp } from "@/lib/animation";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 export default function OurServicesSections() {
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const cardsRef = useRef([] as any);
-
+  const OurServices = dynamic(() => import("@/components/animatedServiceText"), {
+    ssr: false,
+  });
   // useEffect(() => {
   //   gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
   //   gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
@@ -92,6 +95,10 @@ export default function OurServicesSections() {
               </div>
             </div>
           ))}
+
+          <div className="col-12 mt-5">
+            <OurServices />
+          </div>
         </div>
       </div>
     </section>

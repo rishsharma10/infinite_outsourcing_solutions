@@ -756,7 +756,7 @@ button {
     content: "";
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.435);
+    background-color: rgb(0 0 0 / 58%);
     z-index: 1;
     top: 0;
   }
@@ -1164,4 +1164,12 @@ canvas {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: pixelated;
   image-rendering: optimize-contrast;
+}
+
+
+.our-services-content{
+  h1{
+    font-size: 70px !important;
+    line-height: 100px !important;
+  }
 }
