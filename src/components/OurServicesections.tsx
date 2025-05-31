@@ -85,7 +85,7 @@ export default function OurServicesSections() {
                 />
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <h5 className="fw-semibold fs-1">{service.title}</h5>
+                    <h5 className="fs-2 mb-5">{service.title}</h5>
                   </div>
                   <div className="flip-card-back text-white p-4 d-flex flex-column justify-content-center align-items-center">
                     <p className="mb-3 fs-4">{service.description}</p>
