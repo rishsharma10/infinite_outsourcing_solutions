@@ -35,7 +35,7 @@ h2 {
 h1{
   font-family: PP-radio-grotesk !important;
   letter-spacing: 0.5rem !important;
-  font-size: 80px !important;
+  // font-size: 80px !important;
   font-weight: 700 !important;
 }
 .ant-layout-sider {
@@ -1258,63 +1258,59 @@ canvas {
 // @use "@/assets/theme/_var.scss" as *;
 
 .banner {
-    overflow: clip;
+  overflow: clip;
 
-    .banner_in {
-        position: relative;
+  .banner_in {
+      position: relative;
 
-        .car_img {
-            position: absolute;
-            // top: -6.1rem;
-            // left: 0;
-            // width: 105.5rem;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            // height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
+      .car_img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 2;
+        pointer-events: none;
+      
+        clip-path: inset(0 50% 0 0);
+      }
 
-        .full_img {
-            height: 100dvh;
-            min-height: 60rem;
-            object-fit: cover;
-            width: 100%;
-            pointer-events: none;
-        }
+      .full_img {
+          height: 100dvh;
+          min-height: 60rem;
+          object-fit: cover;
+          width: 100%;
+          pointer-events: none;
+      }
 
-        .banner_txt {
+      .banner_txt {
           position: absolute;
-          top: calc(100% - (57.6rem / 2));
-          // top: 50%;
-            // left: 50%;
-            // transform: translate(-50%, -50%);
-            // left: 50%;
-            z-index: 1;
-            @media (max-width: 575px) {
-                top: calc(50% - (14.4rem / 2));
-                }
+          top: calc(50% - (27.6rem / 2));
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+          left: 50%;
+          z-index: 1;
+          @media (max-width: 575px) {
+              top: calc(50% - (14.4rem / 2));
+              }
 
-            h1 {
-                font-size: 4rem;
-                color: white;
-                width: max-content;
-                font-weight: 800;
-                text-transform: capitalize;
+          h1 {
+              font-size: 10rem;
+              color: white;
+              width: max-content;
+              font-weight: 800;
+              text-transform: capitalize;
 @media (max-width: 575px) {
-        font-size: 4rem;
+      font-size: 4rem;
 }
-                span {
-                    display: block;
-                }
-            }
-        }
-    }
+              span {
+                  display: block;
+              }
+          }
+      }
+  }
 }
-
 
 
 

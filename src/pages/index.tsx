@@ -76,6 +76,8 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
   return (
     <>
       {/* <MiotiIndustrySection/> */}
+      <BannerComponent/>
+
 
       <section className="hero-section pt-0 pb-4 position-relative">
         <header
@@ -162,9 +164,8 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
         </header>
 
       
-      <BannerComponent/>
       </section>
-      <ElectricComponent/>
+      {/* <ElectricComponent/> */}
       <CompanyOverview />
       <OurServicesSection />
       <OurIndustry />
