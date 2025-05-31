@@ -36,7 +36,7 @@ const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -74,118 +74,110 @@ const HomePage = () => {
 
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
-const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
+  const text = `lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
   return (
     <>
       {/* <MiotiIndustrySection/> */}
-      <BannerComponent/>
+      <header
+        className={`main-header position-fixed z-3 w-100 ${
+          scrolled ? "d-none" : ""
+        }`}
+      >
+        <nav className="navbar navbar-expand-lg bg-transparent py-3">
+          <div className="container">
+            <a className="navbar-brand" href="#">
+              <img
+                src={!scrolled ? logo.src : logo.src}
+                height={40}
+                alt="Logo"
+              />
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3 mx-auto align-items-center">
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Job Seekers
+                  </a>
+                </li>
+                <li className="text-white fs-4 fw-lighter">|</li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Outsourcing
+                  </a>
+                </li>
+                <li className="text-white fs-4 fw-lighter">|</li>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                  >
+                    Industries we serve
+                  </a>
+                </li>
+                <li className="text-white fs-4 fw-lighter">|</li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/">
+                    Jobs
+                  </a>
+                </li>
+                <li className="text-white fs-4 fw-lighter">|</li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/">
+                    About Us
+                  </a>
+                </li>
+                <li className="text-white fs-4 fw-lighter">|</li>
+                <li className="nav-item">
+                  <a className="nav-link" href="/">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
 
-
-      <section className="hero-section pt-0 pb-4 position-relative">
-        <header
-          className={`main-header position-fixed z-3 w-100 ${
-            scrolled ? "d-none" : ""
-          }`}
-        >
-          <nav className="navbar navbar-expand-lg bg-transparent py-3">
-            <div className="container">
-              <a className="navbar-brand" href="#">
-                <img
-                  src={!scrolled ? logo.src : logo.src}
-                  height={40}
-                  alt="Logo"
-                />
-              </a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarSupportedContent"
-              >
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-3 mx-auto align-items-center">
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Job Seekers
-                    </a>
-                  </li>
-                  <li className="text-white fs-4 fw-lighter">|</li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="#">
-                      Outsourcing
-                    </a>
-                  </li>
-                  <li className="text-white fs-4 fw-lighter">|</li>
-                  <li className="nav-item dropdown">
-                    <a
-                      className="nav-link dropdown-toggle"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                    >
-                      Industries we serve
-                    </a>
-                  </li>
-                  <li className="text-white fs-4 fw-lighter">|</li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Jobs
-                    </a>
-                  </li>
-                  <li className="text-white fs-4 fw-lighter">|</li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      About Us
-                    </a>
-                  </li>
-                  <li className="text-white fs-4 fw-lighter">|</li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Contact Us
-                    </a>
-                  </li>
-                </ul>
-
-                <div className="d-flex">
-                  {/* <button className="btn btn-primary rounded-pill px-4">
+              <div className="d-flex">
+                {/* <button className="btn btn-primary rounded-pill px-4">
                     <span>Login</span>
                   </button> */}
-                  {/* <button className="btn btn-primary rounded-pill px-4">Signup</button> */}
-                </div>
+                {/* <button className="btn btn-primary rounded-pill px-4">Signup</button> */}
               </div>
             </div>
-          </nav>
-        </header>
+          </div>
+        </nav>
+      </header>
+      <BannerComponent />
 
-      
-      </section>
       {/* <ElectricComponent/> */}
       <CompanyOverview />
       <OurServicesSection />
       <OurIndustry />
       {/* <NewIndustryComponent/> */}
       {/* <WhyChooseText/> */}
-      <div style={{background:"#000"}}>
-
-      {/* <WhyChooseUsSection/> */}
-      </div>
+      {/* <div style={{ background: "#000" }}><WhyChooseUsSection/></div> */}
       <ClientSuccessStory />
-      <BannerDescriptionComponents/>
-      <NewWhyChooseUs/>
+      <BannerDescriptionComponents />
+      <NewWhyChooseUs />
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
       {/* <ContactSection /> */}
-      <CtaSection/>
+      <CtaSection />
       <Footer />
     </>
   );

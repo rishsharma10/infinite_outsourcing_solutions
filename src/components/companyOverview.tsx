@@ -156,7 +156,7 @@ export default function CompanyOverview() {
                       <div className="company-overview-card">
                         <h3 className="mb-3">1</h3>
                         <div className="overview-content mt-auto">
-                          <p>{HOMEPAGE.company_overview.desc_1}</p>
+                          <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_1}</p>
                           <Progress showInfo={false} percent={40} />
                         </div>
                       </div>
@@ -179,7 +179,7 @@ export default function CompanyOverview() {
                     <div className="col-6 col-small">
                       <div className="company-overview-card">
                         <h3 className="mb-3">2</h3>
-                        <p>{HOMEPAGE.company_overview.desc_2}</p>
+                        <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_2}</p>
                         <div className="overview-content mt-auto">
                           <Progress showInfo={false} percent={40} />
                         </div>
@@ -203,7 +203,7 @@ export default function CompanyOverview() {
                     <div className="col-6 col-small">
                       <div className="company-overview-card">
                         <h3 className="mb-3">3</h3>
-                        <p>{HOMEPAGE.company_overview.desc_3}</p>
+                        <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_3}</p>
                         <div className="overview-content mt-auto">
                           <Progress showInfo={false} percent={40} />
                         </div>
