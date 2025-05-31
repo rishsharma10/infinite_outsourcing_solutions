@@ -27,7 +27,7 @@ body,
   font-family: PP-neue-montreal;
   src: url(../assets/pp-neue-montreal-cufonfonts/ppneuemontreal-medium.otf)
     format("opentype");
-    font-weight: 500;
+  font-weight: 500;
 }
 @font-face {
   font-family: PP-neue-montreal-normal;
@@ -56,7 +56,7 @@ h1 {
 
 p {
   margin: 0;
-  font-family:  PP-neue-montreal-normal !important;
+  font-family: PP-neue-montreal-normal !important;
   letter-spacing: 1px;
 }
 
@@ -406,7 +406,7 @@ a {
   }
 }
 
-footer{
+footer {
   padding-top: 160px;
 }
 
@@ -1812,10 +1812,10 @@ canvas {
     }
   }
 
-  .col-small{
+  .col-small {
     width: 46% !important;
   }
-  .col-large{
+  .col-large {
     width: 54% !important;
   }
   .company-overview-card {
@@ -1860,24 +1860,23 @@ canvas {
   }
 }
 
-
-.cta-section{
+.cta-section {
   margin-bottom: -180px;
   position: relative;
   z-index: 1;
-  .cta-container{
+  .cta-container {
     background: linear-gradient(160deg, #000a33 60%, #4c4f75);
     padding: 60px;
     border-radius: 32px;
     text-align: center;
     position: relative;
-    h3{
+    h3 {
       font-size: 44px;
     }
 
-    &::before{
+    &::before {
       position: absolute;
-      content: '';
+      content: "";
       height: 0px;
       width: 0px;
       border-radius: 50%;
@@ -1885,6 +1884,71 @@ canvas {
       box-shadow: 0 0 60px 70px rgba(255, 255, 255, 0.285);
       left: 60px;
       top: 60px;
+    }
+  }
+}
+
+.new-why-chooseUs {
+  svg {
+    height: 40px;
+    width: 40px;
+  }
+  p {
+    font-size: 14px;
+    opacity: 0.7;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  .choose-us-title-container {
+    height: 496px;
+    background-color: $blue-color;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+    .choose-us-title-inner {
+      padding: 24px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      transition: 0.5s;
+      border-radius: 20px;
+    }
+    .chooseUs-flip-card-2 {
+      background-color: #ffffff2f;
+      backdrop-filter: blur(20px);
+      height: 0;
+      width: 100%;
+      opacity: 0;
+    }
+    * {
+      color: $white;
+    }
+    &:hover {
+      .chooseUs-flip-card-2 {
+        height: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .choose-us-card {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #f1f4ff;
+    p {
+      font-family: PP-neue-montreal !important;
     }
   }
 }
