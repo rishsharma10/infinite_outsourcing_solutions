@@ -7,6 +7,8 @@ import gsap from "gsap";
 import DrawSVGPlugin from "gsap/DrawSVGPlugin";
 import { useGSAP } from "@gsap/react";
 import DrawSvg from "./DrawSvg";
+import { Carousel } from "antd";
+import carousalImage from "@/assets/bgcontactus.jpg";
 const cards = [
   {
     image: overviewImage,
@@ -21,7 +23,7 @@ const cards = [
     text: HOMEPAGE.company_overview.desc_3,
   },
 ];
-gsap.registerPlugin(DrawSVGPlugin) 
+gsap.registerPlugin(DrawSVGPlugin);
 const Card = ({ image, text, source, delay = 0 }: any) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false });
@@ -35,8 +37,8 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
     }
   }, [inView]);
   useGSAP(() => {
-    gsap.from(".draw-me", {duration:1,drawSVG: true});
-})
+    gsap.from(".draw-me", { duration: 1, drawSVG: true });
+  });
 
   return (
     <motion.div
@@ -44,12 +46,12 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
       initial="hidden"
       animate={controls}
       variants={{
-        hidden: { opacity: 0, y:100, x:60, translateY:100 },
+        hidden: { opacity: 0, y: 100, x: 60, translateY: 100 },
         visible: {
-          opacity:1,
-          translateY:0,
-          y:0,
-          x:0,
+          opacity: 1,
+          translateY: 0,
+          y: 0,
+          x: 0,
           transition: { duration: 1, ease: "easeInOut", delay },
         },
       }}
@@ -79,7 +81,55 @@ export default function CompanyOverview() {
     //     </div>
     //   </div>
     // </section>
+
     <>
+      <section className="company-overview">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h1>
+                Total Control,
+                <br />
+                Total Confidence
+              </h1>
+            </div>
+
+            <div className="col-12">
+              <Carousel>
+                <div>
+                  <div className="row">
+                    <div className="col-6">
+                      <div className="our-service-card">
+                        <h3>Invoice and Billing</h3>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <div className="our-service-card">
+                        <div className="image-part h-100">
+                          <img
+                            src={carousalImage.src}
+                            alt="error"
+                            className="img-fluid"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3>2</h3>
+                </div>
+                <div>
+                  <h3>3</h3>
+                </div>
+                <div>
+                  <h3>4</h3>
+                </div>
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -35,6 +35,8 @@ h2 {
 h1{
   font-family: PP-radio-grotesk !important;
   letter-spacing: 0.5rem !important;
+  font-size: 80px !important;
+  font-weight: 700 !important;
 }
 .ant-layout-sider {
   height: 100%;
@@ -1896,4 +1898,20 @@ canvas {
     line-height: 100px !important;
   }
 }
+}
+
+.our-service-card{
+  height: 440px;
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 40px;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  h3{
+    font-size: 40px;
+    font-weight:600;
+  }
 }
