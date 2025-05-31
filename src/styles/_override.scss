@@ -105,8 +105,8 @@
   }
   span {
     position: relative;
+    font-family: PP-neue-montreal-book !important;
     transition: 0.3s;
-    font-weight: 700;
   }
   &:hover {
     border-color: $primary !important;
@@ -115,9 +115,9 @@
       width: 100%;
       height: 100%;
     }
-      span {
-        color: $white !important;
-      }
+    span {
+      color: $white !important;
+    }
   }
 }
 
@@ -734,11 +734,11 @@ ul.notification-dropdown-menu {
   background: "none";
 }
 
-.text-theme{
+.text-theme {
   color: $primary-light !important;
 }
 
-.carousel-control-prev{
+.carousel-control-prev {
   height: 30px !important;
   width: 36px !important;
   background-color: $primary;
@@ -754,7 +754,7 @@ ul.notification-dropdown-menu {
   left: auto !important;
 }
 
-.carousel-control-next{
+.carousel-control-next {
   height: 30px !important;
   width: 36px !important;
   background-color: $primary;
@@ -764,10 +764,10 @@ ul.notification-dropdown-menu {
   align-items: center;
   border-radius: 6px;
   justify-content: center;
-   bottom: 0 !important;
+  bottom: 0 !important;
   top: auto !important;
 }
 
-.lh-lg{
+.lh-lg {
   line-height: 26px !important;
 }

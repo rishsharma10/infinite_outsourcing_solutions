@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import _SplitText from 'gsap/SplitText';
+import { HOMEPAGE } from '@/utils/content';
 
 const WhyChooseUsText = () => {
     useGSAP(() => {
@@ -43,8 +44,8 @@ const WhyChooseUsText = () => {
         <section className="me_design">
             <Container fluid>
                 <div className="me_in">
-                    <h3>The Benefits of Outsourcing</h3>
-                    <p>Outsourcing is a strategic tool for US businesses. It allows you to</p>
+                    {/* <h3>{HOMEPAGE.heading}</h3> */}
+                    <p>{HOMEPAGE.sub_heading}</p>
                 </div>
             </Container>
             <div className="about_slider_in">

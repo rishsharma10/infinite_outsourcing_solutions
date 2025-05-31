@@ -46,13 +46,13 @@ export default function HeroSection() {
     <div className={`text-center footer-content mb-5`}>
       <div ref={dotRef} className={styles.dots}></div>
       <div ref={textRef}>
-        <h1 className="display-3 fw-bold text-white">BE IN TOUCH.</h1>
-        <h1 className="display-3 fw-bold text-white">BE DATA</h1>
-        <h1 className="display-3 fw-bold text-white">DRIVEN.</h1>
+        <h1 className="display-3 fw-bold text-white text-uppercase">Infinite Outsourcing.</h1>
+        <h1 className="display-3 fw-bold text-white text-uppercase">Unlimited</h1>
+        <h1 className="display-3 fw-bold text-white text-uppercase">Growth.</h1>
 
         <p className="text-white fs-14">
-          TheCUBE Madrid, C/ Rufino González 25 28037, Madrid – España. + 34 673
-          842 174 | info@mioti.es
+        3040 Post Oak blvd, Floor 18. + 34 673
+          842 174 | contact@infiniteos.com
         </p>
       
       </div>

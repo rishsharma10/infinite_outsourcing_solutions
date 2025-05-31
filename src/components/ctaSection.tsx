@@ -6,15 +6,13 @@ const CtaSection = () => {
           <div className="row">
             <div className="col-12">
               <div className="cta-container">
-                <p className="fs-5 fw-semibold">Lorem, ipsum dolor.</p>
-                <h3 className="mb-4">Lorem ipsum dolor sit amet.</h3>
+                {/* <p className="fs-5 fw-semibold">Get in Touch</p> */}
+                <h3 className="mb-4">Get in Touch</h3>
                 <p className="mb-5 w-75 mx-auto">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Perferendis nihil impedit harum? Pariatur nobis dolorem at quo
-                  non nesciunt commodi, modi enim cupiditate inventore!
-                  Reprehenderit, debitis facere. Recusandae, modi rem.
+                Ready to explore how Infinite Outsourcing Solutions can transform your business? Contact us
+                today.
                 </p>
-                <button className="btn btn-primary px-5 py-3"><span>Explore</span></button>
+                <button className="btn btn-primary px-5 py-3"><span>Contact Us</span></button>
               </div>
             </div>
           </div>
