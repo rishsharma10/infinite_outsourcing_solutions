@@ -67,17 +67,19 @@ const Card = ({ image, text, source, delay = 0 }: any) => {
 
 export default function CompanyOverview() {
   return (
-    <section className="company-overview">
-      <div className="container">
-        <h2 className="text-dark text-center mb-5 display-4 fw-bold text-shadow">Company Overview</h2>
-        <div className="row pt-5 gx-5">
-          {cards.map((card, index) => (
-            <div className="col-md-6 col-lg-4 overview-col">
-              <Card key={index} {...card} delay={index * 0.4} />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    // <section className="company-overview">
+    //   <div className="container">
+    //     <h2 className="text-dark text-center mb-5 display-4 fw-bold text-shadow">Company Overview</h2>
+    //     <div className="row pt-5 gx-5">
+    //       {cards.map((card, index) => (
+    //         <div className="col-md-6 col-lg-4 overview-col">
+    //           <Card key={index} {...card} delay={index * 0.4} />
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </section>
+    <>
+    </>
   );
 }

@@ -72,7 +72,7 @@ const BannerComponent = () => {
                     {/* <img src={car.src} alt="" className='car_img' /> */}
                     <div className='banner_txt'>
                         <h1>
-                            <span>{HOMEPAGE.heading}</span>
+                            <span className='text-white'>{HOMEPAGE.heading}</span>
                             {/* <span>{HOMEPAGE.sub_heading}</span> */}
                             {/* <span>developer</span> */}
                         </h1>

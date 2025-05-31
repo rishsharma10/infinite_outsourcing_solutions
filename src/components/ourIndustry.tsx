@@ -40,7 +40,7 @@ export default function OurIndustry() {
   useEffect(() => {
     const interval = setInterval(() => {
       next();
-    }, 10000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -125,32 +125,32 @@ export default function OurIndustry() {
               // rotate: [0, 180, 0,],
               opacity:[1, 0.2, 1]
             }}
-              transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
             >
-            {/* <motion.div
+            <motion.div
              key={current}
               className={styles.circleBorder}
               animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             />
             <motion.div
              key={current}
               className={styles.circleBorder}
               animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
+              transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             />
             <motion.div
              key={current}
               className={styles.circleBorder}
               animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
-            /> */}
+              transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
+            />
 
             <motion.div
               key={current}
               initial={{ scale: 1, opacity: 0 }}
               animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
-              transition={{ duration: 10, ease: "linear" }}
+              transition={{ duration: 6, ease: "linear" }}
               className={styles.carouselCircle}
             >
               <img

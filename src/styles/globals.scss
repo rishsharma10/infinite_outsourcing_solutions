@@ -18,12 +18,23 @@ body,
   // background-color: #000;
 }
 
+@font-face {
+  font-family: PP-radio-grotesk;
+  src: url(../assets/radio-grotesk-font/RadioGrotesk-FreeForPersonalUse/RadioGrotesk-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: PP-neue-montreal;
+  src: url(../assets/pp-neue-montreal-cufonfonts/ppneuemontreal-medium.otf) format('opentype');
+}
+
 h2 {
   color: #fff !important;
-  font-family: "Nunito", sans-serif;
+  font-family: PP-neue-montreal;
 }
 h1{
-  font-family: "Inter", sans-serif;
+  font-family: PP-radio-grotesk !important;
+  letter-spacing: 0.5rem !important;
 }
 .ant-layout-sider {
   height: 100%;
@@ -761,9 +772,10 @@ button {
     content: "";
     height: 100%;
     width: 100%;
-    background-color: rgb(0 0 0 / 58%);
+    background-color: rgba(0, 0, 0, 0.233);
     z-index: 1;
     top: 0;
+    color: white;
   }
   .navbar-brand {
     .nav-link {
@@ -777,6 +789,7 @@ h2.heading{
     &::after{
       display:none !important;
     }
+    color: #fff;
   }
   .border-start{
     border-color: $primary !important;
@@ -1138,8 +1151,8 @@ h2 {
 
 .footer-content{
   h1{
-    font-size: 80px;
-    line-height: 70px;
+    font-size: 100px;
+    line-height: 80px;
   }
 }
 

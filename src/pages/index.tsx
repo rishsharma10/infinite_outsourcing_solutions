@@ -26,6 +26,7 @@ import BannerDescriptionComponents from "@/components/banner/BannerDescription";
 import ElectricComponent from "@/components/electric/Electric";
 import NewIndustryComponent from "@/components/industry/NewIndustryComponent";
 import WhyChooseText from "@/components/WhyChooseText";
+import MiotiIndustrySection from "@/components/MiotiSolutions";
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false, // important to prevent server-side rendering
 });
@@ -74,6 +75,8 @@ const HomePage = () => {
 const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
   return (
     <>
+      {/* <MiotiIndustrySection/> */}
+
       <section className="hero-section pt-0 pb-4 position-relative">
         <header
           className={`main-header position-fixed z-3 w-100 ${
