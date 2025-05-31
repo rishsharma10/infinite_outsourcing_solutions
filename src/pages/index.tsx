@@ -71,14 +71,15 @@ const HomePage = () => {
       },
     },
   };
-
+  
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
-const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
+  const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
   return (
     <>
       {/* <MiotiIndustrySection/> */}
       <BannerComponent/>
+    <WhyChooseUsSection/>
 
 
       <section className="hero-section pt-0 pb-4 position-relative">
@@ -175,7 +176,6 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
       {/* <WhyChooseText/> */}
       <div style={{background:"#000"}}>
 
-      {/* <WhyChooseUsSection/> */}
       </div>
       <ClientSuccessStory />
       <BannerDescriptionComponents/>

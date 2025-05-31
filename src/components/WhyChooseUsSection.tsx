@@ -6,7 +6,7 @@ const WhyChooseUsSection = () => {
   return (
     <>
     <WhyChooseUsText/>
-    <WhyChooseUsContent/>
+    {/* <WhyChooseUsContent/> */}
     </>
   )
 }

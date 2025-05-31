@@ -150,73 +150,6 @@ a {
   // background: url('../assets/brand-guide/grey-bg.jpg') center/cover no-repeat;
 }
 
-.hero-section {
-  position: relative;
-  height: 100vh;
-
-  .ant-carousel .slick-list .slick-slide > div > div,
-  .ant-carousel,
-  .slick-slider,
-  .slick-list,
-  .slick-track {
-    height: 100%;
-  }
-
-  .ant-carousel .slick-list .slick-slide > div > div {
-    height: 100% !important;
-  }
-
-  .ant-carousel .slick-list .slick-slide > div {
-    height: 100%;
-  }
-
-  .hero-image {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      content: "";
-      height: 100%;
-      width: 100%;
-      inset: 0;
-      margin: auto;
-      background-color: #00000095;
-      z-index: 1;
-    }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 3;
-
-    * {
-      color: $white;
-    }
-
-    h1 {
-      font-size: 50px;
-      text-transform: uppercase;
-    }
-
-    p {
-      font-size: 18px;
-    }
-  }
-
-  @media (max-width: 575px) {
-    height: 74vh;
-
-    .hero-content {
-      h1 {
-        font-size: 40px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-    }
-  }
-}
 
 // ---------------------- Blog Section --------------------
 .blog-section {
@@ -787,37 +720,7 @@ button {
   text-align: center;
 }
 
-// --------------------------------- New Css -------------------------------
-.hero-section {
-  background-color: #000;
-  &::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.233);
-    z-index: 1;
-    top: 0;
-    color: white;
-  }
-  .navbar-brand {
-    .nav-link {
-      color: #ffffff !important;
-    }
-  }
-  h2.heading {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 70px;
-    &::after {
-      display: none !important;
-    }
-    color: #fff;
-  }
-  .border-start {
-    border-color: $primary !important;
-  }
-}
+
 
 .overview-card {
   .overview-image {
@@ -1731,9 +1634,9 @@ canvas {
 // choosetext
 
 .me_design {
-  background-color: #000;
+  background-color: $blue-color;
   text-align: center;
-  padding: 6rem 0;
+  padding: 2rem 0;
   min-height: 100dvh;
   display: flex;
   align-items: center;
@@ -1748,7 +1651,7 @@ canvas {
   }
 
   p {
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 500;
     text-transform: uppercase;
     color: rgba(#fff, 1);
@@ -1768,7 +1671,7 @@ canvas {
     video {
       width: 100%;
       object-fit: fill;
-      height: 100dvh;
+      height: 100%;
     }
   }
 }
