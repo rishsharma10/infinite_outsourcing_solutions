@@ -68,9 +68,9 @@ const Banner = () => {
                     <img src={car.src} alt="" className='car_img' />
                     <div className='banner_txt'>
                         <h1>
-                            <span>Transform</span>
-                            <span>Your</span>
-                            <span>Business</span>
+                            <span className='text-white'>Transform</span>
+                            <span className='text-white'>Your</span>
+                            <span className='text-white'>Business</span>
                         </h1>
                     </div>
                 </div>
