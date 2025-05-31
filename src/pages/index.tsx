@@ -1,32 +1,12 @@
 import React, { useEffect, useState } from "react";
 import logo from "@/assets/logo-white.png";
-import logoblack from "@/assets/logoblack.png";
-import { HOMEPAGE } from "@/utils/content";
-import { AnimatePresence, motion, useInView } from "framer-motion";
-import AnimText from "@/components/AnimText";
-import overviewImage from "@/assets/overview.webp";
-import overviewImage2 from "@/assets/overview-2.jpg";
-import { SectionReveal } from "@/components/PageTransition";
-import { fadeUp } from "@/lib/animation";
-import ContactSection from "@/components/contactus/ContactSection";
-// import Footer from "@/components/layout/Footer";
-import AboutSection from "@/components/aboutus/AboutSection";
-import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import ClientSuccessStory from "@/components/ClientSuccessStory";
-import BannerComponents from "@/components/banner/Banner";
 import OurServicesSection from "@/components/OurServicesections";
-import IndustriesWeServe from "@/components/IndustriesWeServe";
-import AboutUsSection2 from "@/components/aboutus/AboutUsSection2";
 import CompanyOverview from "@/components/companyOverview";
 import OurIndustry from "@/components/ourIndustry";
 import dynamic from "next/dynamic";
-import { HomePageTitle } from "@/components/homePageTitle";
 import BannerComponent from "@/components/banner/Banner";
 import BannerDescriptionComponents from "@/components/banner/BannerDescription";
-import ElectricComponent from "@/components/electric/Electric";
-import NewIndustryComponent from "@/components/industry/NewIndustryComponent";
-import WhyChooseText from "@/components/WhyChooseText";
-import MiotiIndustrySection from "@/components/MiotiSolutions";
 import CtaSection from "@/components/ctaSection";
 import NewWhyChooseUs from "@/components/newWhyChooseUs";
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
@@ -40,41 +20,7 @@ const HomePage = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const containerVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-        delayChildren: 0.3,
-        staggerChildren: 0.1,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 15,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const text = `lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.`;
   return (
     <>
       {/* <MiotiIndustrySection/> */}

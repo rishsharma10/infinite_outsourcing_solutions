@@ -7,30 +7,28 @@ import Manufacturing from "@/assets/manufacturer.jpg";
 import Pharmaceuticals from "@/assets/pharmacuticals.jpg";
 import supplychain from "@/assets/supplychain.jpg";
 import { fadeUp } from "@/lib/animation";
-import { HOMEPAGE } from "@/utils/content";
-
-const items = [
-  {
-    image: accountfinance,
-    title: "Accounting & Finance",
-  },
-  {
-    image: Manufacturing,
-    title: "Manufacturing",
-  },
-  {
-    image: Pharmaceuticals,
-    title: "Pharmaceuticals",
-  },
-  {
-    image: supplychain,
-    title: "Supply Chain",
-  },
-];
 
 export default function OurIndustry() {
+  const items = [
+    {
+      image: accountfinance,
+      title: "Accounting & Finance",
+    },
+    {
+      image: Manufacturing,
+      title: "Manufacturing",
+    },
+    {
+      image: Pharmaceuticals,
+      title: "Pharmaceuticals",
+    },
+    {
+      image: supplychain,
+      title: "Supply Chain",
+    },
+  ];
   const titleRef = useRef(null);
-    const descRef = useRef(null);
+  const descRef = useRef(null);
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((prev) => (prev + 1) % items.length);
@@ -47,25 +45,24 @@ export default function OurIndustry() {
   return (
     <section className="py-0 mt-3">
       <div className="d-flex justify-content-center">
-
-          <motion.div
-                  variants={fadeUp}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <div className="row justify-content-between flex-column">
-                      <h2
-                        ref={titleRef}
-                        className="display-4 fw-bold mb-3 text-black text-shadow"
-                      >
-                        Industries We Serve
-                      </h2>
-                      <p ref={descRef} className="lead mb-4 text-black">
-                      We empower businesses across diverse sectors, including
-                      </p>
-                  </div>
-                </motion.div>
+        <motion.div
+          variants={fadeUp}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="row justify-content-between flex-column">
+            <h2
+              ref={titleRef}
+              className="display-4 fw-bold mb-3 text-black text-shadow"
+            >
+              Industries We Serve
+            </h2>
+            <p ref={descRef} className="lead mb-4 text-black">
+              We empower businesses across diverse sectors, including
+            </p>
+          </div>
+        </motion.div>
       </div>
 
       <div className="container d-flex justify-content-center align-items-center min-vh-100">
@@ -118,38 +115,39 @@ export default function OurIndustry() {
             </motion.div>
           </motion.div> */}
 
-          <motion.div className={styles.circleContainer}
+          <motion.div
+            className={styles.circleContainer}
             key={current}
             animate={{
               scale: [1.1, 0.2, 1.1],
               // rotate: [0, 180, 0,],
-              opacity:[1, 0.2, 1]
+              opacity: [1, 0.2, 1],
             }}
-              transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-            >
+            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          >
             <motion.div
-             key={current}
+              key={current}
               className={styles.circleBorder}
-              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
               transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             />
             <motion.div
-             key={current}
+              key={current}
               className={styles.circleBorder}
-              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
               transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             />
             <motion.div
-             key={current}
+              key={current}
               className={styles.circleBorder}
-              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
               transition={{ repeat: Infinity, duration: 6, ease: "linear" }}
             />
 
             <motion.div
               key={current}
               initial={{ scale: 1, opacity: 0 }}
-              animate={{ scale: [0.2, 1,1], opacity: [0.2, 1,1]}}
+              animate={{ scale: [0.2, 1, 1], opacity: [0.2, 1, 1] }}
               transition={{ duration: 6, ease: "linear" }}
               className={styles.carouselCircle}
             >
@@ -166,7 +164,6 @@ export default function OurIndustry() {
               </div>
             </motion.div>
           </motion.div>
-          
 
           <div className={styles.navBtn} onClick={next}>
             &rarr;
