@@ -1,4 +1,10 @@
-import { GroupIcon } from "lucide-react";
+import {
+  SearchCheck,
+  Settings2,
+  BrainCircuit,
+  Puzzle,
+  LifeBuoy,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const getScrollVariant = (rotateX = 12, skewY = 5) => ({
@@ -27,6 +33,37 @@ const staggerContainer = {
     },
   },
 };
+
+
+const steps = [
+  {
+    title: "Needs Assessment",
+    desc: "We listen to understand your challenges and goals.",
+    icon: <SearchCheck/>, // Represents assessing or reviewing needs
+  },
+  {
+    title: "Customized Solutions",
+    desc: "We design tailored strategies to meet your needs.",
+    icon: <Settings2/>, // Represents configuration or customization
+  },
+  {
+    title: "AI-Powered Execution",
+    desc: "Vorkz.ai drives fast, accurate outcomes.",
+    icon: <BrainCircuit/>, // Represents AI/machine execution
+  },
+  {
+    title: "Seamless Integration",
+    desc: "Our solutions blend with your existing processes.",
+    icon: <Puzzle/>, // Represents fitting pieces/integration
+  },
+  {
+    title: "Ongoing Support",
+    desc: "We provide continuous guidance to ensure success.",
+    icon: <LifeBuoy/>, // Represents help/support
+  },
+];
+
+
 const OurApproach = () => {
   return (
     <>
@@ -42,37 +79,37 @@ const OurApproach = () => {
             {/* Left Column */}
             <motion.div className="col-md-6" variants={getScrollVariant(10, 3)}>
               <div className="our-approach-container">
-                <h3>We&apos;re invested in your success</h3>
+                <h3>Our Approach</h3>
                 <p className="my-4 pt-2 pb-3 fs-5">
-                  From implementation support to comarketing, we&apos;re here to
-                  help our global alliance partners grow their client
-                  relationships — and their revenue
+                We take a collaborative, transparent approach to deliver results
                 </p>
-                <button className="btn btn-primary px-4 py-2">
+                <p className="my-2 pt-0 pb-3 fs-5">
+                This approach has helped US clients across industries overcome obstacles like talent shortages
+and inefficient workflows.
+                </p>
+                {/* <button className="btn btn-primary px-4 py-2">
                   <span>Contact Partnership</span>
-                </button>
+                </button> */}
               </div>
             </motion.div>
 
             {/* Right Column with 4 Unique Flip-ins */}
             <motion.div className="col-md-6" variants={staggerContainer}>
-              {[12, -10, 8, -7].map((angle, idx) => (
+              {steps.map((res, index) => (
                 <motion.div
-                  key={idx}
+                  key={index}
                   className="our-approach-container d-flex gap-3 mb-4"
-                  variants={getScrollVariant(angle, 4)}
+                  variants={getScrollVariant(index, 4)}
                 >
                   <span>
-                    <GroupIcon />
+                    {res.icon}
                   </span>
                   <div>
                     <h4 className="fs-2 fw-medium">
-                      We&apos;re invested in your success
+                      {res.title}
                     </h4>
                     <p>
-                      From implementation support to comarketing, we&apos;re
-                      here to help our global alliance partners grow their
-                      client relationships — and their revenue
+                      {res.desc}
                     </p>
                   </div>
                 </motion.div>

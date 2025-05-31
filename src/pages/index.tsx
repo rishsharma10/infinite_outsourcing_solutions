@@ -109,27 +109,27 @@ const HomePage = () => {
           </div>
         </nav>
       </header>
+      <BannerComponent />
       {/* <BannerComponent /> */}
-      {/* <BannerComponent /> */}
-      {/* <WhyChooseUsSection/> */}
+      <WhyChooseUsSection/>
 
       {/* <ElectricComponent/> */}
       <CompanyOverview />
       <OurServicesSection />
-      <OurIndustry />
+      <NewWhyChooseUs />
+      {/* <OurIndustry /> */}
       {/* <NewIndustryComponent/> */}
       {/* <WhyChooseText/> */}
       {/* <div style={{ background: "#000" }}><WhyChooseUsSection/></div> */}
-      <ClientSuccessStory />
-      <BannerDescriptionComponents />
-      <NewWhyChooseUs />
       <OurApproach/>
       <OurBenefits/>
+      <ClientSuccessStory />
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
       {/* <ContactSection /> */}
+      <BannerDescriptionComponents />
       <CtaSection/>
       <Footer />
     </>

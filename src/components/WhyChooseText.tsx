@@ -34,7 +34,7 @@ const WhyChooseUsText = () => {
                 color: "rgba(255, 255, 255, 0.2)",
             })
             .to(".about_slider_in", {
-                duration: 2,
+                duration: 5,
                 clipPath: "circle(100% at 50% 50%)",
             }, "+=0.2")
            

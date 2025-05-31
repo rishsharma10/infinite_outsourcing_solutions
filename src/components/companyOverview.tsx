@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import overviewImage from "@/assets/overview.webp";
 import overviewImage2 from "@/assets/overview-2.jpg";
@@ -11,6 +11,7 @@ import DrawSvg from "./DrawSvg";
 import { Carousel, Progress } from "antd";
 import carousalImage from "@/assets/overview.webp";
 import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
+import { fadeUp } from "@/lib/animation";
 // const cards = [
 //   {
 //     image: overviewImage,
@@ -72,59 +73,47 @@ import { ChevronLeftCircle, ChevronRightCircle } from "lucide-react";
 // gsap.registerPlugin(ScrollTrigger);
 
 export default function CompanyOverview() {
-  const progressRefs = useRef([]);
+  const [progress, setProgress] = useState(40);
   const cardRefs = useRef([]);
   const headingRef = useRef(null);
 
+  const progressRef = useRef<HTMLDivElement>(null);
+
   const settings = {
-    slidesToShow: 1.3,
+    slidesToShow: 1.365,
     dots: false,
     arrows: true,
     nextArrow: <ChevronRightCircle color="#000a33" />,
     prevArrow: <ChevronLeftCircle color="#000a33" />,
-    beforeChange: (current: any, next: any) => {
-      const target = progressRefs.current[next];
-      if (target) {
-        const targetPercent = 40; // Replace with dynamic if needed
-        gsap.fromTo(
-          target,
-          { width: "0%" },
-          {
-            width: `${targetPercent}%`,
-            duration: 1.5,
-            ease: "power3.out",
-          }
-        );
+    beforeChange: () => {
+      if (progressRef.current) {
+        // Immediately reset width to 0%
+        gsap.set(progressRef.current, { width: '0%' });
+      }
+    },
+    afterChange: () => {
+      if (progressRef.current) {
+        // Animate from 0% to 100%
+        gsap.to(progressRef.current, {
+          width: '100%',
+          duration: 1.5,
+          ease: 'power3.out',
+        });
       }
     },
   };
+  
+  
 
-  // useEffect(() => {
-  //   gsap.from(headingRef.current, {
-  //     y: 50,
-  //     opacity: 0,
-  //     duration: 1,
-  //     ease: "power2.out",
-  //     scrollTrigger: {
-  //       trigger: headingRef.current,
-  //       start: "top 90%",
-  //     },
-  //   });
-
-  //   // Card animations
-  //   cardRefs.current.forEach((el, index) => {
-  //     gsap.from(el, {
-  //       opacity: 0,
-  //       y: 60,
-  //       duration: 1,
-  //       delay: index * 0.1,
-  //       scrollTrigger: {
-  //         trigger: el,
-  //         start: "top 85%",
-  //       },
-  //     });
-  //   });
-  // }, []);
+  useEffect(() => {
+    if (progressRef.current) {
+      gsap.to(progressRef.current, {
+        width: '100%',
+        duration: 1.5,
+        ease: 'power3.out',
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -138,8 +127,14 @@ export default function CompanyOverview() {
             </div>
 
             <div className="col-12">
-              <Carousel {...settings}>
-                <div>
+              <Carousel {...settings} draggable>
+                {[HOMEPAGE.company_overview.desc_1,HOMEPAGE.company_overview.desc_2,HOMEPAGE.company_overview.desc_3].map((res,index) => {
+                  return <motion.div
+                  variants={fadeUp}
+                  //           initial={{ opacity: 0, scale: 1 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                  //           transition={{ duration: 0.6 }}
+                > <div>
                   <div className="row mx-0 gx-2">
                     <div className="col-6 col-large">
                       <div className="company-overview-card p-0">
@@ -154,63 +149,21 @@ export default function CompanyOverview() {
                     </div>
                     <div className="col-6 col-small">
                       <div className="company-overview-card">
-                        <h3 className="mb-3">1</h3>
+                        <h3 className="mb-3">{index + 1}</h3>
                         <div className="overview-content mt-auto">
-                          <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_1}</p>
-                          <Progress showInfo={false} percent={40} />
+                          <p className="line-clamp-6">{res}</p>
+                          <Progress showInfo={false} percent={progress} />
+                          {/* <div className="progress-bar-container">
+  <div className="progress-bar" ref={progressRef}></div>
+</div> */}
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className="row mx-0 gx-2">
-                    <div className="col-6 col-large">
-                      <div className="company-overview-card p-0">
-                        <div className="image-part h-100">
-                          <img
-                            src={carousalImage.src}
-                            alt="error"
-                            className="img-fluid"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6 col-small">
-                      <div className="company-overview-card">
-                        <h3 className="mb-3">2</h3>
-                        <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_2}</p>
-                        <div className="overview-content mt-auto">
-                          <Progress showInfo={false} percent={40} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                   <div>
-                  <div className="row mx-0 gx-2">
-                    <div className="col-6 col-large">
-                      <div className="company-overview-card p-0">
-                        <div className="image-part h-100">
-                          <img
-                            src={carousalImage.src}
-                            alt="error"
-                            className="img-fluid"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-6 col-small">
-                      <div className="company-overview-card">
-                        <h3 className="mb-3">3</h3>
-                        <p className="line-clamp-6">{HOMEPAGE.company_overview.desc_3}</p>
-                        <div className="overview-content mt-auto">
-                          <Progress showInfo={false} percent={40} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </motion.div>
+                })}
+               
               </Carousel>
             </div>
           </div>
