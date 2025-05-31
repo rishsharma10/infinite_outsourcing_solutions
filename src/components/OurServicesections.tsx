@@ -1,20 +1,15 @@
 import { useEffect, useRef } from "react";
-// import gsap from "gsap";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { HOMEPAGE } from "@/utils/content";
-import styles from "@/styles/ContactSection.module.css";
 import { fadeUp } from "@/lib/animation";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
 export default function OurServicesSections() {
   const titleRef = useRef(null);
   const descRef = useRef(null);
-  const cardsRef = useRef([] as any);
-  const OurServices = dynamic(() => import("@/components/animatedServiceText"), {
-    ssr: false,
-  });
+  // const OurServices = dynamic(() => import("@/components/animatedServiceText"), {
+  //   ssr: false,
+  // });
   // useEffect(() => {
   //   gsap.from(titleRef.current, { y: -50, opacity: 0, duration: 1 });
   //   gsap.from(descRef.current, { opacity: 0, delay: 0.5, duration: 1 });
@@ -85,7 +80,7 @@ export default function OurServicesSections() {
                 />
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <h5 className="fs-2 mb-5">{service.title}</h5>
+                    <p className="fs-2 mb-5">{service.title}</p>
                   </div>
                   <div className="flip-card-back text-white p-4 d-flex flex-column justify-content-center align-items-center">
                     <p className="mb-3 fs-4">{service.description}</p>
@@ -96,9 +91,9 @@ export default function OurServicesSections() {
             </div>
           ))}
 
-          <div className="col-12 mt-5">
+          {/* <div className="col-12 mt-5">
             <OurServices />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
