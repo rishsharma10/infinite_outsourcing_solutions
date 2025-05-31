@@ -9,6 +9,7 @@ import BannerComponent from "@/components/banner/Banner";
 import BannerDescriptionComponents from "@/components/banner/BannerDescription";
 import CtaSection from "@/components/ctaSection";
 import NewWhyChooseUs from "@/components/newWhyChooseUs";
+import OurApproach from "@/components/ourApproach";
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false, // important to prevent server-side rendering
 });
@@ -106,7 +107,7 @@ const HomePage = () => {
           </div>
         </nav>
       </header>
-      <BannerComponent />
+      {/* <BannerComponent /> */}
 
       {/* <ElectricComponent/> */}
       <CompanyOverview />
@@ -118,6 +119,7 @@ const HomePage = () => {
       <ClientSuccessStory />
       <BannerDescriptionComponents />
       <NewWhyChooseUs />
+      <OurApproach/>
       {/* <WhyChooseUsSection /> */}
       {/* <IndustriesWeServe /> */}
       {/* <AboutUsSection2/> */}
