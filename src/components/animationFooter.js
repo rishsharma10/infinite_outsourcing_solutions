@@ -43,7 +43,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className={`text-center footer-content`}>
+    <div className={`text-center footer-content mb-5`}>
       <div ref={dotRef} className={styles.dots}></div>
       <div ref={textRef}>
         <h1 className="display-3 fw-bold text-white">BE IN TOUCH.</h1>

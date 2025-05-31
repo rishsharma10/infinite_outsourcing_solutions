@@ -1,17 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
-// import car from "../../../../assets/images/car-only-with-spacing.png";
-// import full from "../../../../assets/images/car-full.jpg";
-import car from "@/assets/logo-white.png";
 import full from "@/assets/manufacturer.jpg";
-// import "@/components/banner/Banner.scss";
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { HomePageTitle } from '../homePageTitle';
 import { HOMEPAGE } from '@/utils/content';
 
-gsap.registerPlugin(ScrollTrigger);
 const BannerComponent = () => {
     const [done, setDone] = useState(false);
     useGSAP(() => {

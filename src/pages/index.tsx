@@ -27,6 +27,7 @@ import ElectricComponent from "@/components/electric/Electric";
 import NewIndustryComponent from "@/components/industry/NewIndustryComponent";
 import WhyChooseText from "@/components/WhyChooseText";
 import MiotiIndustrySection from "@/components/MiotiSolutions";
+import CtaSection from "@/components/ctaSection";
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false, // important to prevent server-side rendering
 });
@@ -172,7 +173,7 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
       {/* <WhyChooseText/> */}
       <div style={{background:"#000"}}>
 
-      <WhyChooseUsSection/>
+      {/* <WhyChooseUsSection/> */}
       </div>
       <ClientSuccessStory />
       <BannerDescriptionComponents/>
@@ -181,6 +182,7 @@ const text =`lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, 
       {/* <AboutUsSection2/> */}
       {/* <AboutSection/> */}
       {/* <ContactSection /> */}
+      <CtaSection/>
       <Footer />
     </>
   );
